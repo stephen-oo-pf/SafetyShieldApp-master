@@ -1,0 +1,62 @@
+
+$dashboardSidebarWCollapsed:72px;
+$dashboardSidebarW:280px;
+
+$mapSidebarW:300px;
+
+$lightenPer:10%;
+$darkenPer:25%;
+
+$boxShadow:0 9px 46px 8px rgba(0,0,0,0.11), 0 24px 38px 3px rgba(0,0,0,0.13), 0 11px 15px 0 rgba(0,0,0,0.02);
+$boxShadowLight:0 2px 4px 0 rgba(0,0,0,0.18);
+
+//Intrado Primary Colors
+$colorPurple:#582D82;
+$colorPurple2:lighten($colorPurple,$lightenPer);
+$colorPurple3:darken($colorPurple,$darkenPer);
+$colorLGP:#ebeaec;//LGP Light Grey Purple
+
+$colorBlue:#00B5E2;
+$colorBlue2:lighten($colorBlue,$lightenPer);
+$colorBlue3:darken($colorBlue,$darkenPer);
+$colorAzul:#039BE5;
+
+
+$colorGreen:#8EC85C;
+$colorGreen2:lighten($colorGreen,$lightenPer);
+$colorGreen3:darken($colorGreen,$darkenPer);
+
+$colorOrange:#f57f29;
+$colorOrange2:lighten($colorOrange,$lightenPer);
+$colorOrange3:darken($colorOrange,$darkenPer);
+
+$colorYellow:#FFC107;
+
+$dashboardExpandTransition:all 0.4s ease-out;
+
+//Intrado Secondary Colors
+$colorBlack:#3a4448;
+$colorDarkGrey:#75868C;//intrado calls this "dark grey"...
+$colorDarkerGrey:#5A6872;
+$colorGrey:#4A4A4A;
+$colorLightGrey:#777777;
+
+$colorEmerald:#00A880;
+
+$colorRed:#D41A31;
+$colorRed2:lighten($colorRed,$lightenPer);
+$colorRed3:darken($colorRed,$darkenPer);
+
+$colorText:#212529;
+
+$colorLightRed:#debebd;
+$colorLightBlue:#b8dce6;
+$colorLightGreen:#C7E1A9;
+$colorLightYellow:#FFE79E;
+
+$maxContentW:1600px;
+
+$resize1:1600px;
+$resize2:1280px;
+
+$mobile1:980px;

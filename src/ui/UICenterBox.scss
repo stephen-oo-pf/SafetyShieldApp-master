@@ -1,0 +1,65 @@
+@import '../_vars.scss';
+.centerBox{
+    height:100%;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;   
+    position:relative;
+    .centerBoxBGClick{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+    }
+    
+
+    .centerBoxContainer{
+        &.whiteBox{
+            padding:40px;
+            background-color:#FFFFFF;
+            border-radius:6px;
+            margin:0 20px;
+            position:relative;
+            &.bigBox{
+
+                width:100%;
+                max-width:600px;
+            }
+        }
+        overflow: hidden;            
+        .centerBoxHeader{
+            margin-top:-40px;
+            margin-left:-40px;
+            margin-right:-40px;
+            margin-bottom:40px;
+            background-color:$colorPurple;
+            color:#FFF;
+            height:50px;
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        &.max100{
+            max-height:100%;
+            
+        }
+    }
+    
+
+    &.animateIntro{
+        .centerBoxContainer{
+            opacity:0;
+            animation: fadeAndScaleIn 0.5s ease-out;
+            animation-fill-mode: forwards;
+        }
+        .bgLogo{
+            filter:blur(50px);
+            animation: unblur 1s ease-out;
+            animation-fill-mode: forwards;
+        }
+    }
+}

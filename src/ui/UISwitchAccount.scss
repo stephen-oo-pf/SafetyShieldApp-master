@@ -1,0 +1,104 @@
+@import '../_vars.scss';
+.switchAccount{
+    .ddBtn{
+        border:0;
+        height:68px;
+        border-radius:0;
+        .label{
+            user-select:none;
+            .psapLogo{
+                width:50px;
+                height:50px;
+                object-fit: contain;
+                margin-right:4px;
+                margin-left:4px;
+                flex-shrink: 0;     
+                &.wider{
+                    width:80px;
+                    margin-left:10px;
+                    margin-bottom:7px;
+                }           
+            }
+            .psapName{
+                padding-left:10px;
+                font-size:20px;
+                font-weight:500;
+            }
+        }
+    }
+    &.open{
+        .ddBtn{
+            border:0;
+        }
+    }
+    .container{
+        .containerInside{
+            border-left:2px solid $colorPurple;
+            border-right:2px solid $colorPurple;
+            border-bottom:2px solid $colorPurple;
+            max-height:350px;
+        }
+    }
+    .switchAccountItem{
+        display:flex;
+        padding:10px;
+        padding-left:20px;
+        height:60px;
+        flex-direction: row;
+        align-items: center;
+        color:$colorText;
+        border-bottom:1px solid rgba(0,0,0,0.1);
+        cursor:pointer;
+        transition:all 0.1s ease-out;
+        font-size:14px;
+        .icon{
+            flex-shrink: 0;
+            width:18px;
+            height:18px;
+            margin-right:5px;
+        }
+        img{
+            width:46px;
+            height:40px;
+            object-fit: contain;
+            margin-right:10px;
+            flex-shrink: 0;
+        }
+        .name{
+            font-weight:500;
+            line-height:normal;
+        }
+        &:last-child{
+            border-bottom:0;
+        }
+        &.childDepth0{
+            height:80px;
+            font-size:16px;
+            img{
+                width:56px;
+                height:50px;
+            }            
+            background-color:rgba(0,0,0,0.05);
+
+        }
+        &.childDepth1{
+            background-color:rgba(0,0,0,0.1);
+        }
+        &.childDepth2{
+            background-color:rgba(0,0,0,0.2);
+        }
+        &.childDepth3{
+            background-color:rgba(0,0,0,0.3);
+        }
+        
+        &:hover{
+            background-color:rgba(0,0,0,0);
+        }
+        &.selected{
+            
+            background-color:$colorPurple;
+            color:#FFF;
+        }
+    }
+    
+}

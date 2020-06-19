@@ -1,0 +1,31 @@
+@import '../_vars.scss';
+.table{
+    .tableHeader{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        font-weight:500;
+        border-bottom:2px solid rgba(0, 0, 0, 0.1);
+        .tableColumn{
+            cursor: pointer;
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            padding:0 10px;
+            text-transform: uppercase;
+        }
+    }
+    .tableContent{
+        .tableRow{
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            .tableRowColumn{                
+                padding:10px;
+            }
+            &:nth-child(even){
+                background-color:rgba(0,0,0,0.05);
+            }
+        }
+    }
+}

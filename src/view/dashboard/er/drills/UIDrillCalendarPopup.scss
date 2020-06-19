@@ -1,0 +1,86 @@
+@import '../../../../vars';
+.drillCalendarPopup{
+    user-select:auto;
+    text-align:left;
+    &.whiteBox{
+        color:$colorText;
+        width:220px;
+
+        .closeBtn{
+            width:40px;
+            height:40px;
+            .icon{
+                background-color:#FFF;
+                border-radius:6px;
+            }
+        }
+        .scrollContainer{
+            height:calc(100% - 100px);
+            max-height:260px;
+            .insideContainer{
+                padding:0 14px 20px;
+
+                .drillCalendarPopupGroup{
+                    font-size:15px;
+                    margin-bottom:10px;
+                    .groupTime{
+                        border-bottom:2px solid $colorPurple;
+                        font-weight:500;
+                        padding:10px 0;
+                        margin-bottom:16px;
+                    }
+                    .groupContainer{
+                        .drillCalendarPopupGroupItem{
+                            display:flex;
+                            flex-direction: row;
+                            align-items: flex-start;
+                            .incidentTypeIcon{
+                                flex-shrink: 0;
+                                margin-right:10px;
+                                &.smallerAndBlack{
+                                    .icon{
+                                        width:26px;
+                                        height:26px;
+                                        svg{
+                                            width:70%;
+                                            height:70%;
+
+                                        }
+                                    }
+                                }
+                            }
+                            .itemInfo{
+                                .itemInfoType{
+                                    font-weight:500;
+                                    margin-bottom:4px;
+                                }
+                                .itemInfoOrg{
+                                    font-weight:500;
+                                    color:$colorGrey;
+                                    margin-bottom:6px;
+                                }
+                                .drillStatusIcon{
+                                    .icon{
+                                        width:20px;
+                                        height:20px;
+                                        svg{
+                                            width:16px;
+                                            height:16px;
+                                        }
+                                    }
+                                    .iconLabel{
+                                        font-size:12px;
+                                        color:$colorGrey;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &:last-child{
+                        margin-bottom:0;
+                    }
+                }
+            }
+        }
+    }
+}

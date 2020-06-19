@@ -1,0 +1,14 @@
+@import '../vars';
+.iconWLabel{
+    display:inline-flex;
+    flex-direction: row;
+    align-items: center;
+    .icon{
+        margin-right:10px;
+        flex-shrink: 0;
+
+    }
+    .iconLabel{
+
+    }
+}

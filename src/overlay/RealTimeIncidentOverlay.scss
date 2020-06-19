@@ -1,0 +1,17 @@
+.realtimeIncidentOverlay{
+    .whiteBox{
+        .overlayHeader{
+            border-bottom:rgba(0,0,0,0.05) 1px solid;
+        }
+        .overlayContent{
+            padding:0 30px;
+            .incidentFrame{
+                .incidentFrameOrgHeader{
+                    padding-top:12px;
+                    margin-bottom:14px;
+                }
+                margin-bottom:30px;
+            }
+        }
+    }
+}

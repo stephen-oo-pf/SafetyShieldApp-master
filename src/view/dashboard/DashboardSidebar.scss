@@ -1,0 +1,135 @@
+@import '../../vars';
+
+.dashboardSidebar{
+    display:flex;
+    flex-direction: column;
+    .sidebarHeader{
+        height:68px;
+        flex-shrink: 0;
+        background-color:$colorPurple;
+        color:#FFF;
+        position:relative;
+        z-index:5;
+
+    }
+    
+    .sidebarContent{
+        flex-grow:1;
+        position:relative;
+    }
+    .sidebarFooter{
+        flex-shrink: 0;     
+        position:relative; 
+    }
+
+    .tabBarItem{
+        color:$colorPurple;
+        font-size:18px;
+        
+        height:56px;
+        padding:0 24px;
+        transition: all 0.2s;
+        flex-direction: row;
+        .label{
+            padding-left:24px;
+            white-space: nowrap;
+            max-width:$dashboardSidebarW;
+            overflow:hidden;
+            transition:$dashboardExpandTransition;
+            line-height:normal;
+            .name{
+                font-size:16px;
+            }
+            .secrole{
+                font-size:12px;
+                color:$colorText;
+            }
+            .opsrole{
+                font-size:12px;
+                color:$colorDarkGrey;
+            }
+        }
+        .icon{
+            flex-shrink: 0;
+        }
+        &:hover{
+            background-color:#ebeaec;
+        }
+        &.selected{
+            background-color:#ebeaec;
+            &:after{
+                width:5px;
+            }
+        }
+        &.isSubItem{
+            height:30px;
+            font-size:16px;
+            color:$colorGrey;
+            padding-left:84px;
+            margin-bottom:0px;
+            .icon{
+                display:none;
+            }
+            .label{
+                padding-left:0px;
+            }
+            &.selected{
+                font-weight:500;
+            }
+        }
+        &.hasSubItems{
+            margin-bottom:0px;
+        }
+        &:after{
+            display:block;
+            content:"";
+            position:absolute;
+            transition:all 0.1s;
+            width:0px;
+            top:0;
+            right:0;
+            height:100%;
+            background-color:$colorPurple;
+        }
+    }
+
+    &.expanded{
+        .sidebarHeader{
+            .switchAccount{
+                .ddBtn{
+                    .label{
+                        justify-content: center;
+                        .psapLogo{
+                            margin:0;
+                        }
+                        .psapName{
+                            display:none;
+                        }
+                    }
+                    .icon{
+                        display:none;
+                    }
+                }
+                .container{
+                    width:$dashboardSidebarWCollapsed;
+                    transition:all 0.3s;
+                }
+                &.open{
+                    .container{
+                        width:300px;
+                    }
+
+                }
+            }
+        }
+        
+        .tabBarItem{
+            .label{
+                max-width:0;
+            }
+            &.isSubItem{
+                display:none;
+            }
+        }
+    }
+}

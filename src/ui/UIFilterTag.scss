@@ -1,0 +1,41 @@
+@import '../_vars.scss';
+.filterTag{
+    background-color:rgba($colorPurple,0.1);
+    display:inline-flex;
+    flex-direction: row;
+    margin-right:10px;
+    align-items: center;
+    padding-left:12px;
+    border-radius:16px;
+    margin-bottom:10px;
+    opacity:0;
+    animation-timing-function: ease-out;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    animation-name: fadeAndScaleIn;
+    .labels{
+        font-size:13px;
+        color:$colorPurple;
+        .labelType{
+            font-weight:500;
+        }
+        .labelValue{
+
+        }
+    }
+    &.removing{
+        animation-delay:0s !important;
+        animation-name: fadeAndScaleOut;
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+    }
+}
+
+
+@for $i from 1 through 30{
+    .filterTag:nth-child(#{$i}n){
+        z-index: 100 - $i;
+        animation-delay:#{$i * 0.075}s;
+    }
+}  

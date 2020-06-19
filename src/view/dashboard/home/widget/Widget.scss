@@ -1,0 +1,31 @@
+@import '../../../../vars';
+.widget{
+    display:flex;
+    flex-direction: column;
+    z-index:1;
+    .widgetLabel{
+        font-size:18px;
+        font-weight:500;
+        margin-bottom:14px;
+        flex-shrink: 0;
+    }
+    .widgetContent{
+        flex-grow:1;
+    }
+    
+    .lastUpdate{
+        font-size:10px;
+        color:$colorGrey;
+        letter-spacing: normal;
+        text-transform: uppercase;
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        height:20px;
+    }
+
+    &.isFocused{
+
+        z-index:5;
+    }
+}

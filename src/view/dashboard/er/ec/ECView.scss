@@ -1,0 +1,51 @@
+@import '../../../../vars';
+.emergencyContacts{
+    
+    .ecContent{
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom:-20px;
+        margin-right:-20px;
+        .ecItem{
+            width:276px;
+            margin-right:20px;
+            margin-bottom:20px;
+            padding:25px;
+            &:before{
+                border:1px solid #CCC;
+
+            }
+            .popupMenu{
+                position:absolute;
+                top:0;
+                right:0;
+                z-index:10;
+            }
+        }
+    }
+}
+
+
+.ecItem{
+    display:flex;
+    flex-direction: column;
+    position:relative;
+    .name{
+        margin-bottom:6px;
+    }
+    .opsRole{
+        font-size:14px;
+        color:$colorDarkGrey;
+        text-transform: uppercase;
+        margin-bottom:10px;
+    }
+    .emPhone{
+        display:flex;
+        flex-direction: row;
+        align-items:center;
+        .tel{
+            margin-right:10px;
+        }
+    }
+}

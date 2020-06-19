@@ -1,0 +1,147 @@
+@import '../_vars.scss';
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:10;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .overlayBG{
+        position:absolute;
+        background-color:rgba(0,0,0,0.5);
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        z-index:2;
+    }
+    >.whiteBox{
+        position:relative;
+        z-index:5;
+        display:flex;
+        flex-direction: column;
+        max-height:calc(100% - 20px);
+        width:calc(100% - 20px);
+        max-width:900px;
+        margin:10px;
+        overflow: hidden;
+        border-radius: 4px;
+        &:before{
+            //box-shadow:$boxShadow;
+
+            
+        }
+
+        .overlayHeader{
+            flex-shrink: 0;
+            height:84px;
+            display:flex;
+            flex-direction: row;
+            align-items: center;  
+            padding:0 30px;
+            .headerClose{
+                margin-left:auto;
+                margin-right:-14px;
+            }   
+            .headerIcon{
+                margin-right:20px;
+            }
+            .incidentTypeIcon{
+                .icon{
+                    width:46px;
+                    height:46px;
+                    background-color:$colorBlack;
+                    margin-right:20px;
+                }
+            }
+            .title{
+                margin-bottom:0;
+                font-size:20px;
+                .required{
+                    margin-left:5px;
+                    color:$colorRed;
+                }
+            }       
+        }
+        .overlayContent{
+            
+            line-height:normal;
+            >p{
+                padding:6px 30px;
+                display:flex;
+                flex-direction: row;
+                align-items: center;
+                margin-bottom:30px;
+                line-height:26px;
+            }
+        }
+        .overlayFooter{
+            flex-shrink: 0;
+            padding:0 30px 30px;
+            display:flex;
+            flex-direction: row;
+            justify-content: right;
+            .button{
+                margin-right:10px;
+                &:last-child{
+                    margin-right:0;
+                }
+            }
+        }
+    }
+    &.noHeader{
+        .whiteBox{
+            .overlayContent{
+                p{
+                    margin-top:40px;
+                }
+            }
+        }
+    }
+    &.biggerMaxWidth{
+        .whiteBox{
+            max-width:1000px;
+        }
+    }
+    &.smallMaxWidth{
+        .whiteBox{
+            max-width:330px;
+        }
+    }
+    &.mediumMaxWidth{
+        .whiteBox{
+            max-width:500px;
+        }
+    }
+    &.mediumLargeMaxWidth{
+        .whiteBox{
+            max-width:660px;
+        }
+    }
+    &.smallHeader{
+        .whiteBox{
+            .overlayHeader{
+                height:50px;
+                .title{
+                    font-size:20px;
+                }
+            }
+        }
+    }
+    &.hide{
+        .whiteBox{
+            &.animateIntro{
+                animation-name: fadeAndScaleOut;
+                animation-iteration-count: 1;
+                animation-timing-function: ease-in;
+                animation-fill-mode: forwards;
+                animation-duration: 0.15s !important;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,80 @@
+@import '../../vars';
+.verification{
+    .centerBox{
+        .centerBoxContainer{
+            
+            .input{
+                margin-bottom:10px;
+            }
+            .method{
+                max-height:120px;
+                border-radius:5px;
+                border:1px solid rgba(0,0,0,0.1);
+                .inputRadio{
+                    height:42px;
+                    padding:0;
+                    border-bottom:1px solid rgba(0,0,0,0.1);
+                    &:last-child{
+                        border-bottom:0;
+                    }
+                    input{
+                        width:42px;
+                        height:42px;
+                        margin-right:10px;
+                        cursor: pointer;
+                    }
+                    label{
+                        height:100%;
+                        flex-grow:1;
+                        display:flex;
+                        flex-direction: row;
+                        align-items: center;
+                    }
+                }
+
+            }
+            .enterCode{
+                width:364px;
+
+                .inputElement{
+                    width:100%;
+                    padding:16px 20px;
+                    padding-right:0;
+                    padding-left:26px;
+                    font-size:18px;
+                    letter-spacing: 42px;
+                }
+                .digitUnderscores{
+                    position:absolute;
+                    bottom:10px;
+                    left:10px;
+                    display:flex;
+                    flex-direction: row;
+
+                    >div{
+                        height:2px;
+                        width:42px;
+                        background-color:#CCCCCC;
+                        margin-right:10px;
+                    }
+                }
+                &.focused{
+                    .digitUnderscores{
+                        >div{
+                            background-color:$colorPurple;
+                        }
+                    }
+                }
+            }
+            .btns{
+                display:flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                margin-top:40px;
+                .cancel{
+                    margin-right:20px;
+                }
+            }
+        }
+    }
+}

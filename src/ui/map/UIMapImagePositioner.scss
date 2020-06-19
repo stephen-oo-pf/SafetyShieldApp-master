@@ -1,0 +1,107 @@
+@import '../../_vars.scss';
+.mapImagePositioner{
+    .mapPositionTitle{
+        font-weight:500;
+        margin-bottom:15px;
+        span{
+            color:$colorRed;
+        }
+    }
+    .mapPositionDesc{
+        margin-bottom:20px;
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position:relative;
+        line-height:normal;
+        .mapPositionLegend{
+            display:inline-flex;
+            flex-direction: row;
+            margin-left:20px;
+            align-items: center;
+
+            .mapPositionLegendItem{
+                margin-right:10px;
+                display:flex;
+                flex-direction: row;
+                align-items: center;
+                user-select: none;
+                margin-right:30px;
+                font-weight:500;
+                &:last-child{
+                    margin-right:10px;
+                }
+                .icon{
+                    padding:6px;
+                    border-radius:50%;
+                    margin-right:10px;
+                    width:36px;
+                    height:36px;
+                }
+                &.rotation{
+                    .icon{
+                        background-color:$colorBlue;
+
+                    }
+                }
+                &.scale{
+                    .icon{
+                        background-color:$colorGreen;
+
+                    }
+                }
+                &.position{
+                    .icon{
+                        background-color:$colorPurple;
+                        color:#FFF;
+
+                    }
+                }
+            }
+        }
+    }
+    .mapPositionContainer{
+        height:500px;
+        border:2px solid rgba(0,0,0,0.1);
+        border-radius:6px;
+        position:relative;
+        .mapPositionMap{
+            height:100%;
+            position:relative;
+        }
+        .mapPositionPreparing{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background-color:rgb(231, 231, 231);
+
+            transition:all 0.5s;
+            opacity:0;
+            pointer-events: none;
+            z-index:5;
+            display:flex;
+            align-items: center;
+            flex-direction: column;
+            justify-items: center;
+            justify-content: center;
+            .loadingIcon{
+                margin-bottom:10px;
+            }
+            &.showing{
+                opacity:1;
+                pointer-events: auto;
+            }
+        }
+        
+    }
+}
+.mapImagePositionerOverlay{
+    height:100%;
+    img{
+        width:100%;
+        height:100%;
+    }
+}

@@ -1,0 +1,58 @@
+@import '../../vars';
+
+.mapTypeControl{
+    margin:10px;
+    border-radius:10px;
+    width:36px;
+    height:36px;
+    transition:all 0.3s ease-out;
+    position:relative;
+    overflow: hidden;
+    background-color:#FFF;
+    .mapTypeControlBtn{
+        transition:all 0.3s ease-out;
+        position:absolute;
+        bottom:0;
+        right:0;
+        z-index:5;
+    }
+    .mapTypeControlItems{
+        transition:all 0.3s ease-out;
+        opacity:0;
+        position:relative;
+        z-index:2;
+
+        .mapTypeControlItem{
+            font-size:14px;
+            color:$colorDarkerGrey;
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            padding:0 10px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            cursor: pointer;
+            transition:all 0.2s;
+            &:hover{
+                color:$colorPurple;
+
+            }
+            &.selected{
+                background-color:rgba(0,0,0,0.05);
+                font-weight: 500;
+                color:$colorPurple;
+            }
+        }
+    }
+    &.expanded{
+        width:110px;
+        border-radius:10px;
+        .mapTypeControlItems{
+            opacity:1;
+        }
+        .mapTypeControlBtn{
+            opacity:0;
+            pointer-events: none;
+        }
+    }
+}

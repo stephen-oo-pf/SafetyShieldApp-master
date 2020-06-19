@@ -1,0 +1,59 @@
+@import '../../../../vars';
+.eventsMapWidget{
+    
+    .widgetLabel{
+
+    }
+    .whiteBox{
+        display:flex;
+        flex-direction: column;
+        
+    }
+    .eventsMapHeader{
+        flex-shrink: 0;
+        height:52px;
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        padding:0 18px;
+        .mapHeaderItem{
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            margin-right:30px;
+            flex-grow: 0;
+            font-size:14px;
+            .count{
+                margin-right:6px;
+                font-weight: 700;
+            }
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+    .eventsMapContent{
+        flex-grow:1;
+        padding:18px;
+        padding-top: 0;
+        position:relative;
+        min-height: 0;
+        .eventsMapContentContainer{
+            
+        }   
+        .lastUpdate{
+            bottom:0;
+            position:absolute;
+            left:18px;
+        }
+    }
+    @media(max-width:$resize2){
+        .eventsMapHeader{
+            .mapHeaderItem{
+                margin-right: 20px;
+                .count{
+                }
+            }
+        }
+    }
+}

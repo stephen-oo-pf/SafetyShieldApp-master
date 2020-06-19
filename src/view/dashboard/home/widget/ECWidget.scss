@@ -1,0 +1,74 @@
+@import '../../../../vars';
+
+.home .row .column .widget{
+    &.ecWidget{
+        margin-bottom:16px;
+    }
+}
+.ecWidget{
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    .widgetLabel{
+        margin-bottom:0;
+    }
+    .widgetContent{
+        margin-left:-14px;
+    }
+    .tabBar{
+        flex-shrink:0;
+        &:before{
+            display:none;
+        }
+    }
+    .scrollContainer{
+        padding:14px;
+        overflow-x:auto;
+        overflow-y:hidden;
+        white-space: nowrap;
+        .ecItem{
+            display:inline-flex;
+            padding:12px 14px;
+            justify-content: center;
+            background-color:#FFFFFF;
+            margin-right:10px;
+            box-shadow:$boxShadowLight;
+            border-radius:6px;
+            &:last-child{
+                margin-right:0;
+            }
+            .emPhone{
+                .tel{
+                    width:28px;
+                    height:28px;
+                }
+                font-size:13.5px;
+            }
+            .opsRole{
+                font-size:12px;
+            }
+            .greyBubble{
+                position:absolute;
+                top:10px;
+                right:10px;
+            }
+        }
+        .noData{
+            width:100%;
+            height:100%;
+        }
+    }
+    &.size_w1,&.size_w2{
+        .scrollContainer{
+            .ecItem{
+                .greyBubble{
+                    position:static;
+                    top:auto;
+                    right:auto;
+                    margin-top:10px;
+                }
+            }
+        }
+    }
+}

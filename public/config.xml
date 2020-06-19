@@ -1,0 +1,7 @@
+<data>
+    <envs>
+        <env name="Dev" url="https://api-dev.intradosafe.com/SafetyShield/" default="true"/>
+        <env name="QA" url="https://api-qa.intradosafe.com/SafetyShield/" default="false"/>
+        <env name="Anita" url="https://anita.laaserapi.com/SafetyShield/" default="false"/>
+    </envs>
+</data>

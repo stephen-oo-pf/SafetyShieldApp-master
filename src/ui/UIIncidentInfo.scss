@@ -1,0 +1,51 @@
+@import '../vars';
+
+
+.incidentInfo{
+    background-color:#F5F5F5;
+    border-radius:18px;
+    padding:20px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom:0px;
+    line-height: normal;
+    .incidentInfoItem{
+        font-size:16px;
+        .incidentInfoItemTitle{
+            font-weight:500;
+            margin-bottom:8px;
+        }
+        .incidentInfoItemValue{
+            
+            color:$colorGrey;
+            span{
+                margin-top:10px;
+                display:block;
+                text-transform: uppercase;
+                &:last-child{
+                }
+                font-size:14px;
+
+            }
+            .date{
+                font-size:14px;
+                margin-top:10px;
+                &:last-child{
+                }
+
+            }
+            .commentBox{
+                margin-top:14px;
+                max-width:350px;
+            }
+        }
+        margin-bottom:26px;
+        margin-right:40px;
+        min-width:100px;
+        &.fullWidth{
+            width:100%;
+            margin-right:0;
+        }
+    }
+}

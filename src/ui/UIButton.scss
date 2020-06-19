@@ -1,0 +1,207 @@
+@import '../_vars.scss';
+
+$buttonShadow:0 1px 5px 0 rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.11), 0 3px 1px -2px rgba(0,0,0,0.11);
+
+.button{
+    display:inline-flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    
+    outline: none;
+    text-transform: uppercase;
+    font-weight:500;
+    border:0;
+    -webkit-appearance: none;
+    border-radius:4px;
+    position:relative;
+    cursor: pointer;
+    transition:all 0.2s ease-out;
+    text-decoration: none;
+    font-size:16px;
+
+    padding:0 15px;
+    user-select: none;
+    &.disabled{
+        pointer-events: none;
+        opacity:0.3;
+    }
+    &.fullWidth{
+        &.realButton{
+            
+            width:100%;
+        }
+        display:flex;
+    }
+    .icon{
+        flex-shrink: 0;
+        margin-left:10px;
+    }
+    &.noLabel{
+        .icon{
+            margin-left:0;
+        }
+    }
+    &.circle{
+        border-radius:50%;
+    }
+    &.tel{
+        svg{
+            width:80%;
+            height:80%;
+        }
+    }
+    &.color_purple{
+        color:#FFF;
+        background-color:$colorPurple;
+        box-shadow:$buttonShadow;
+        &:hover,&:active{
+            color:#FFF;
+            background-color:$colorPurple2;
+        }
+    }
+    &.color_lightpurple{
+        background-color:#EDE8F1;
+        color:$colorPurple;
+        &:hover,&:active{
+            color:$colorPurple2;
+            background-color:darken(#EDE8F1,5%);
+        }
+    }
+    &.color_lightgrey{
+        background-color:rgba(0,0,0,0.1);
+        color:$colorText;
+        &:hover,&:active{
+            color:#FFF;
+            background-color:$colorPurple;
+        }
+    }
+    &.color_orange{
+        background-color:$colorOrange;
+        color:#FFF;
+        &:hover,&:active{
+            color:#FFF;
+            background-color:$colorOrange2;
+        }
+    }
+    &.color_red{
+        background-color:$colorRed;
+        color:#FFF;
+        &:hover,&:active{
+            color:#FFF;
+            background-color:$colorRed2;
+        }
+    }
+    &.color_white{
+        background-color:#FFF;
+        color:$colorText;
+        &:hover,&:active{
+            color:$colorPurple;
+        }
+    }
+    &.color_transparent{
+        background-color:transparent;
+        color:$colorText;
+        &:hover,&:active{
+            color:$colorPurple2;
+        }
+    }
+    &.color_transparent_purple{
+        background-color:transparent;
+        color:$colorPurple;
+        &:hover,&:active{
+            color:$colorPurple2;
+        }
+    }
+    &.square{
+        
+        padding:0;
+    }
+    &.size_large{
+        height:65px;    
+        &.square{
+            width:65px;
+        } 
+    }
+    &.size_normal{
+        height:50px;
+        &.square{
+            width:50px;
+        } 
+    }
+    &.size_small{
+        height:42px;
+        &.square{
+            width:42px;
+        } 
+    }
+    &.size_tiny{
+        height:32px;
+        &.square{
+            width:32px;
+        } 
+    }
+    &.size_singleline{
+        height:auto;
+        padding:0;
+        text-transform: capitalize;
+    }
+    
+    &.font_size_large{
+        font-size:24px;        
+    }
+    &.font_size_normal{
+        font-size:16px;
+    }
+    &.font_size_small{
+        font-size:14px;
+
+    }
+    &.font_size_tiny{
+        font-size:12px;
+    }
+    
+
+    &.hor_align_left{
+        justify-content: flex-start;
+    }
+    &.hor_align_center{
+        justify-content: center;   
+    }
+    &.hor_align_right{
+        justify-content: flex-end;     
+    }
+    &.iconEdge{
+        justify-content: space-between;
+        &.hor_align_center{
+            //label center, icon on right
+            &:before{
+                width:24px;
+                height:24px;
+                display:block;
+                content:"";
+                margin-right:10px;
+            }            
+        }
+    }
+    
+    &.iconOnLeft{
+        flex-direction: row-reverse;
+        .icon{
+            margin-left:0;
+            margin-right:10px;
+        }
+        &.iconEdge{
+            &.hor_align_center{
+                &:after{
+                    width:24px;
+                    height:24px;
+                    display:block;
+                    content:"";
+                    margin-left:10px;
+                }           
+            }
+        }
+    }
+    
+}

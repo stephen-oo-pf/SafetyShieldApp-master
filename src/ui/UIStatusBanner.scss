@@ -1,0 +1,128 @@
+@import '../_vars.scss';
+
+$statusSizeNormal:64px;
+$statusSizeSmall:50px;
+
+
+.statusBanner{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color:$colorText;
+    padding:0px 10px;
+    border-radius:4px;
+    margin-bottom:0px;
+    animation-name: statusBannerIntro;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    overflow:hidden;
+    &.error{
+        background-color:$colorLightRed;
+    }
+    &.info{
+        background-color:$colorLightBlue;
+    }
+    &.success{
+        background-color:$colorLightGreen;
+    }
+    &.warning{
+        background-color:$colorLightYellow;
+    }
+    &.closing{
+        animation-duration: 0.4s;
+        animation-name: statusBannerOutro;
+    }
+    .text{
+        flex-grow: 1;
+        display:inline-flex;
+        flex-direction: row;
+        align-items: center;
+        font-size:18px;
+        line-height:normal;
+        .icon{
+            margin-right:15px;
+            flex-shrink: 0;
+        }
+        span{
+            margin-left:15px;
+            font-weight:600;
+        }
+    }
+    .close{
+        flex-shrink: 0;
+        cursor: pointer;
+        transition:transform 0.2s ease-out;
+        &:hover{
+            transform:scale(1.1);
+        }
+    }
+
+    &.size_small{
+        padding:10px 10px;
+        animation-name: statusBannerIntroSmall;
+        
+        .text{            
+            font-size:16px;
+        }
+        
+        &.closing{
+            animation-name: statusBannerOutroSmall;
+
+            .close{                
+                transform:scale(0);
+            }
+        }
+    }
+}
+
+@keyframes statusBannerIntro{
+    0%{
+        margin-bottom:0;
+        padding:0px 10px;
+        opacity:0;
+        height:0;
+    }
+    100%{
+        margin-bottom:20px;
+        padding:10px 10px;
+        opacity:1;
+        height:auto;
+    }
+}
+@keyframes statusBannerOutro{
+    0%{
+        margin-bottom:20px;
+        padding:10px 10px;
+    }
+    100%{
+        margin-bottom:0;
+        padding:0px 10px;
+        height:0;
+    }
+}
+@keyframes statusBannerIntroSmall{
+    0%{
+        margin-bottom:0;
+        padding:0px 10px;
+        height:0;
+    }
+    100%{
+        margin-bottom:20px;
+        padding:10px 10px;
+    }
+}
+@keyframes statusBannerOutroSmall{
+    0%{
+        margin-bottom:20px;
+        padding:10px 10px;
+        height:auto;
+
+    }
+    100%{
+        margin-bottom:0;
+        padding:0px 10px;
+        height:0;
+    }
+}

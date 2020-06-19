@@ -1,0 +1,43 @@
+@import '../../_vars.scss';
+.opacityControl{
+            
+    display:inline-block;
+    
+    background-color:#FFF;
+    box-shadow:rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
+    width:60px;
+    border-radius:2px;
+    pointer-events: none;
+    overflow:hidden;
+    margin-left:10px;
+    .opacityLabel{
+        text-align:center;
+        font-size:12px;
+        color:$colorText;
+        user-select: none;
+        .opacityLabelTitle{
+            margin-bottom:5px;
+            font-weight:500;
+        }
+        .opacityLabelValue{
+            font-size:16px;
+            color:$colorPurple;
+        }
+        margin-top:10px;
+        margin-bottom:-10px;
+    }
+    .rangeslider{
+        pointer-events: auto;
+        border-radius:5px;
+        background-color:rgba(0,0,0,0.2);
+        .rangeslider__fill{
+            border-bottom-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+            background-color:$colorPurple;
+        }
+        .rangeslider__handle{
+            border-radius:50%;
+            height:30px;
+        }
+    }
+}

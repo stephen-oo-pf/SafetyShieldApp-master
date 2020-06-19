@@ -1,0 +1,25 @@
+@import '../../../../vars';
+.drillCircleGraph{
+    position:relative;
+    .legend{
+        position:absolute;
+        bottom:0;
+        left:0;
+        .legendItem{
+            margin-bottom:20px;
+            font-size:12px;
+            display:flex;
+            align-items: center;
+            color:$colorDarkerGrey;
+            .bullet{
+                width:10px;
+                height:10px;
+                border-radius: 50%;
+                
+                margin-right:10px;
+                flex-shrink: 0;
+            }
+
+        }
+    }
+}

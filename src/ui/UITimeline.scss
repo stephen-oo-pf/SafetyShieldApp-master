@@ -1,0 +1,56 @@
+@import '../_vars.scss';
+.timeline{
+    display:flex;
+    flex-direction: column;
+    .timelineItem{
+        margin-left:10px;
+        display:flex;
+        flex-direction: row;
+        border-left:2px solid #979797;
+        font-size:14px;
+        position:relative;
+        padding-left:20px;
+        padding-bottom:30px;
+        &:before{
+            content:"";
+            position:absolute;
+            top:0;
+            left:-7px;
+            width:12px;
+            height:12px;
+            border-radius:50%;
+            background-color:#FFF;
+            border:2px solid #979797;
+        }
+        .date{
+            margin-right:24px;
+            font-weight:500;
+            flex-shrink: 0;
+        }
+        .info{
+            .title{
+                font-weight:500;
+                margin-bottom:8px;
+            }
+            .value{
+
+            }
+        }
+        &:last-child{
+            border-left-color: transparent;
+        }
+    }
+}
+
+
+h2{
+    &.title{
+        &.timelineTitle{
+            font-weight:400;
+            margin-bottom:20px;
+            .icon{
+                margin-right:7px;
+            }
+        }
+    }
+}

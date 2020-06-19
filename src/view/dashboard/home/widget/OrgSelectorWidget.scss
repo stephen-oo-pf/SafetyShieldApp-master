@@ -1,0 +1,18 @@
+.orgSelectorWidget{
+    
+    
+    .switchAccount{
+        display:inline-block;
+        width:80%;
+        .ddBtn{
+            border:2px solid #E5E5E5;
+            border-radius:4px;
+            height:44px;
+            .label{
+                .psapName{
+                    font-size:18px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,142 @@
+@import '../_vars.scss';
+.tabBar{
+
+    &.appearAsButtons{
+        display:inline-flex;
+        .tabBarItem{
+            display:inline-flex;
+            height:40px;
+            background-color:rgba(0,0,0,0.15);
+            border-radius:4px;
+            padding:0 14px;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-right:6px;
+            color:$colorText;
+            transition:all 0.3s;
+            font-weight:500;
+            .label{
+                text-align:center;
+                
+            }
+            &:hover{
+                background-color:rgba(0,0,0,0.15);
+
+            }
+            &.selected{
+                background-color:$colorPurple;
+                color:#FFF;
+            }
+        }
+    
+    }
+    &.horizontal{
+
+        
+        height:56px;
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        position:relative;
+        &:before{
+            content:"";
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:100%;
+            height:1px;
+            background-color:rgba(0,0,0,0.1);
+        }
+        
+        .tabBarItem{
+            text-transform: uppercase;
+            padding:15px 32px;
+            height:56px;
+            font-size:14px;
+            font-weight:500;
+            letter-spacing: 0.4px;
+            min-width:150px;
+            text-align:center;
+            color:$colorLightGrey;
+            transition:all 0.2s;
+            border-right:1px solid rgba(0,0,0,0.05);
+            &:after{
+                content:"";
+                position:absolute;
+                bottom:0;
+                left:0;
+                width:100%;
+                height:0px;
+                background-color:$colorPurple;
+                transition:all 0.2s;
+            }
+            &:hover{
+                color:$colorPurple;
+                
+
+            }
+            &.selected{
+                background:none;
+
+                color:$colorPurple;
+                &:after{
+                    height:2px;
+                }
+            }
+            
+        }
+
+    }
+    &.disableSelected{
+        .tabBarItem{
+            &.selected{
+                pointer-events: none;
+                
+            }
+        }
+    }
+}
+
+.tabBarItem{
+    display:flex;
+    flex-direction: row;
+    
+    text-decoration: none;
+    align-items: center;
+    position:relative;
+    color:$colorPurple;
+    cursor: pointer;
+    .icon{
+        flex-shrink: 0;
+    }
+    .label{
+        flex-grow:1;
+    }
+    .desc{
+        position:absolute;
+        right:10px;
+        top:50%;
+        transform:translate(100%,-50%);
+        white-space: nowrap;
+        background-color:rgba(255,255,255,0.95);
+        border-radius:6px;
+        padding:6px 8px;
+        font-size:15px;
+        z-index:4;
+        box-shadow:0px 2px 4px 0px rgba(0,0,0,0.18);
+        opacity:0;
+        pointer-events: none;
+        transition:all 0.2s ease-out 0.1s;
+        
+    }
+    &:hover{
+        .desc{
+            opacity:1;
+        }
+    }
+}
+
+.tabBarContentContainer{
+    padding:20px;
+}

@@ -1,0 +1,74 @@
+@import '../vars';
+.inputAutoSearch{
+    height:42px;
+    .inputAutoSearchField{
+        margin:0;
+        width:100%;
+        position:relative;
+        .icon{
+           position:absolute;
+           top:0;
+           right:0; 
+           width:42px;
+           height:42px;
+           svg{
+            width:60%;
+            height:60%;
+           }
+        }
+        .inputElement{            
+            padding-right:42px;
+        }
+    }
+    .inputAutoSearchSelected{
+        background-color:rgba(0,0,0,0.1);
+        border:2px solid rgba(0,0,0,0.1);
+        border-radius:6px;
+        height:42px;
+        display:flex;
+        flex-direction: row;
+        padding:0 0 0 10px;
+        align-items: center;
+        .button{
+            margin-left:auto;
+        }
+    }
+    .inputAutoSearchContainer{
+        opacity:0;
+        pointer-events: none;
+        .scrollContainer{
+            max-height:250px;
+            .inputAutoSearchItem{
+                height:40px;
+                display:flex;
+                flex-direction: row;
+                align-items: center;
+                padding:0 10px;
+                border-bottom:1px solid rgba(0,0,0,0.1);
+                cursor: pointer;
+                transition:all 0.15s;
+                &:first-child{
+                    border-top-left-radius: 6px;
+                    border-top-right-radius: 6px;
+                }
+                &:last-child{
+                    border-bottom-left-radius: 6px;
+                    border-bottom-right-radius: 6px;
+                }
+                &:hover,&:active{
+                    background-color:$colorPurple;
+                    color:#FFF;
+                }
+            }
+        }
+    }
+    &.showResults{
+        .inputAutoSearchContainer{
+            opacity:1;
+            pointer-events: auto;
+            .scrollContainer{
+
+            }
+        }
+    }
+}

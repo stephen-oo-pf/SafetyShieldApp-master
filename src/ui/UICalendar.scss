@@ -1,0 +1,136 @@
+@import '../_vars.scss';
+.calendarStyle{
+
+    .react-calendar{
+        background-color:#FFF;
+        box-shadow:$boxShadowLight;
+        border-radius:6px;
+        border:0;
+        padding-bottom:10px;
+        .react-calendar__navigation{
+            margin-bottom:0px;
+            button{
+                color:$colorPurple;
+                line-height:0;
+                &:hover{
+                    background-color: rgba(0,0,0,0.05);
+                    color:$colorPurple2;
+                }
+            }
+            .react-calendar__navigation__label{
+                font-size:16px;
+                line-height:normal;
+                background-color:#FFF;
+                text-transform: uppercase;
+                font-weight:500;
+                span{
+                    margin-top:-20px;
+                }
+                &:hover,&:focus{
+                    background-color:#FFF;
+
+                }
+            }
+        }
+        .react-calendar__month-view__days__day{
+            padding-top:6px;
+            padding-bottom:6px;
+            font-size:14px;
+            
+        }
+        .react-calendar__month-view__weekdays__weekday{
+            abbr{
+                border:0;
+                outline:0;
+                font-size:14px;
+                font-weight:600;
+                border-bottom: none !important;
+                cursor: inherit !important;
+                text-decoration: none !important;
+            }
+        }
+        .react-calendar__navigation__prev2-button,.react-calendar__navigation__next2-button{
+            display:none;
+        }
+        .react-calendar__month-view__days__day--weekend{
+            color:$colorText;
+        }
+        .react-calendar__month-view__days__day--neighboringMonth{
+            color:rgba(0,0,0,0.25)
+        }
+        
+        .react-calendar__tile--now{
+            background:transparent;
+            color:#3DA1AE;
+            &:hover,&:focus{
+                background:rgba(0,0,0,0.05)    
+            }
+        }
+        .react-calendar__tile--hasActive,
+        .react-calendar__tile--active{
+            color:$colorText;
+            background-color:transparent;
+            &:hover,&:focus{
+                background-color: rgba(0,0,0,0.05);
+            }
+        }
+        .react-calendar__tile{
+            position:relative;
+            &.selectedDate{
+                background-color:$colorPurple;
+                color:#FFF;
+            }
+        }
+        .react-calendar__month-view__days__day{
+            &.selectedDate{
+                background-color:transparent;
+                font-weight:500;
+                &:after{
+                    content:"";
+                    display:block;
+                    position:absolute;
+                    z-index:2;
+                    width:30px;
+                    height:30px;
+                    background-color:$colorPurple;
+                    border-radius:50%;
+                    top:50%;
+                    left:50%;
+                    transform:translate(-50%,-50%);
+
+                }
+                abbr{
+                    position:relative;
+                    z-index:4;
+                    color:#FFF;
+                }
+                
+                
+                &:hover,&:focus{
+                    &.selectedDate{
+                        &:after{
+                            background-color:$colorPurple2;
+                        }
+                    }
+                }
+                &.react-calendar__tile--now{
+                    &:after{
+                        background-color:#3DA1AE;
+
+                    }
+                    
+                    &:hover,&:focus{
+                        &.selectedDate{
+                            &:after{
+                                background-color:lighten(#3DA1AE,5%);
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+
+        
+    }
+}

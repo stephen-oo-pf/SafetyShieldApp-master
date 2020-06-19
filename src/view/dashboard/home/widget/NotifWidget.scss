@@ -1,0 +1,88 @@
+@import '../../../../vars';
+
+
+.notificationsWidget{
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    
+    
+    .loadingCorner{
+        position:absolute;
+        top:-34px;
+        right:0;
+        z-index:5;
+        .icon{
+            width:20px;
+            height:20px;
+        }
+    }
+    .scrollContainer{
+        padding:18px;
+        flex-grow: 1;
+        min-height: 0;
+        position:relative;
+        max-height:350px;
+        z-index:3;
+        .notifPerDay{
+            display:flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom:10px;
+            .date{
+                background-color:#F5F5F5;
+                font-size:12px;
+                padding:6px 12px;
+                font-weight:500;
+                margin-bottom:6px;
+                border-radius:4px;
+            }
+            .items{
+                width:100%;
+                .notifItem{
+                    display:flex;
+                    flex-direction: row;
+                    padding:14px 0;
+                    font-size:14px;
+                    line-height: normal;
+                    .icon{
+                        flex-shrink: 0;
+                        margin-right:16px;
+                        color:$colorDarkerGrey;
+                    }
+                    .notifItemDetails{
+                        .notifItemDetailsTitle{
+                            font-weight:500;
+                            display:flex;
+                            flex-direction: row;
+                            align-items: center;
+                            margin-bottom:3px;
+                            .badge{
+                                margin-right:10px;
+                            }
+                        }
+                        .notifItemDetailsText{
+                            line-height:20px;
+                            a{
+                                margin-left:5px;
+                                color:$colorPurple;
+                                font-weight:500;
+                            }
+                        }
+                    }
+                    &:last-child{
+                        margin-bottom:0;
+                    }
+                } 
+            }
+            &:last-child{
+                margin-bottom:16px;
+            }
+        }
+    }
+    .lastUpdate{
+        height:20px;
+        flex-shrink: 0;
+        padding-left:22px;
+    }
+}

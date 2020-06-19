@@ -1,0 +1,192 @@
+@import '../../vars';
+
+.alertsBanner{
+    margin:0px;
+    border-radius:4px;
+    line-height:normal;
+    overflow:hidden;
+    height:0;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+
+    margin-right: auto;
+    margin-left: auto;
+    max-width: $maxContentW;
+
+
+    &.showing{
+        margin-bottom:30px;
+        &.useMargin{
+            margin-top:30px;
+            margin-bottom:10px;
+        }
+    }
+    .alertsBannerInside{
+        .alertBanner{
+            margin-bottom:14px;
+            &:last-child{
+                margin-bottom:0;
+            }
+        }
+    }
+    
+    .incidentTypeIcon{
+        flex-shrink: 0;
+        margin-right:10px;
+        .icon{
+            width:30px;
+            height:30px;
+            background-color:$colorBlack;
+            svg{                        
+                width:22px;
+                height:22px;
+            }
+        }
+        .label{
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            .badge{
+                margin-left:0;
+                margin-right:10px;
+                flex-shrink: 0;
+            }
+        }
+    }
+    
+}
+.alertBanner{
+    border-radius:4px;
+    &.color_red{
+        background-color:$colorLightRed;
+    }
+    &.color_blue{
+        background-color:$colorLightBlue;
+    }
+    .badge{
+        margin-right:10px;
+    }
+
+    &.singleIncident{        
+        display:flex;
+        flex-direction: column;
+        padding:8px 16px 8px;
+        .singleIncidentOrg{
+            flex-shrink: 0;
+            .button{
+                height:auto;
+                color:$colorGrey;
+                text-transform: capitalize;
+                justify-content: flex-start;
+                padding:0;
+                font-size:14px;
+                font-weight:500;
+                &:hover,&:active{
+                    color:$colorPurple;
+                }
+            }
+        }
+        .singleIncidentInfo{
+            display:flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding:8px 0;
+            cursor: pointer;
+            transition:color 0.3s;
+            .singleIncidentInfoName{
+                padding-top:6px;
+                flex-grow:1;
+
+                span{
+                    font-weight: 600;
+                    margin-right:10px;                    
+
+                }
+            }
+            .viewDetails{
+                flex-shrink: 0;
+                margin-left:10px;
+                padding-top:8px;
+                font-size:14px;
+                font-weight:500;
+                text-transform: uppercase;
+            }
+            &:hover,&:active{
+                .incidentTypeIcon{
+                    .icon{
+                        transition:background-color 0.3s;
+                        background-color:$colorPurple;
+                    }
+                }
+                color:$colorPurple;
+            }
+        }
+
+        &.activeIncidentDrill{
+            .singleIncidentInfo{
+                .singleIncidentInfoName{
+                    padding-top:0;
+                    margin-top:2px;
+                }
+            }
+        }
+    }
+
+    &.multipleIncidents{
+        padding:20px;
+        .multipleIncidentsTitle{
+            text-transform: uppercase;
+            font-weight:500;
+            margin-bottom:18px;
+        }
+        .multipleIncidentsContainer{
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            margin-right:-20px;
+            margin-bottom:-20px;
+            .multipleIncidentsItem{
+                background-color:#FFF;
+                border-radius:6px;
+                margin-right:20px;
+                margin-bottom:20px;
+                display:flex;
+                flex-direction: column;
+                padding:12px;
+                
+                max-width:50%;
+                .orgName{
+                    margin:-12px 0 10px;
+                    border-bottom:1px solid rgba(0,0,0,0.2);
+                    .button{
+                        height:auto;
+                        padding:10px 0;
+                    }   
+                }
+                .incidentItems{
+                    max-height:110px;
+
+                    .incidentItem{
+                        margin-bottom:10px;
+                        transition:all 0.2s;
+                        .icon{                            
+                            transition:all 0.2s;
+                        }
+                        &:last-child{
+                            margin-bottom:0;
+                        }
+                        &:hover,&:active{
+                            color:$colorPurple;
+                            .icon{
+                                background-color:$colorPurple;
+                            }
+                        }
+                    }
+                }
+                
+            }
+
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@import '../vars';
+.loadingIcon{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    animation-name: spin;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 0.5s;
+    .icon{
+        color:$colorPurple;
+        width:30px;
+        height:30px;
+    }
+    &.white{
+        .icon{
+            color:#FFF;
+        }
+    }
+}

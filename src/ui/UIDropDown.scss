@@ -1,0 +1,74 @@
+@import '../_vars.scss';
+
+
+.ddBtn{
+    border:2px solid rgba(0,0,0,0.1);
+    border-radius:8px;
+    height:50px;
+    padding:4px;
+    transition:all 0.2s;
+    .label{
+        .erpIcon{
+            
+        }
+    }
+}
+
+.dropDown{
+    position:relative;
+    &.canClick{
+        .ddBtn{
+            cursor:pointer;
+
+        }
+    }
+    .ddBtn{
+        display:flex;
+        height:68px;
+        flex-direction: row;
+        align-items: center;
+        justify-items: flex-start;
+        .label{
+            flex-grow:1;
+            display:flex;
+            align-items: center;
+            flex-direction: row;
+        }
+        .ddIcon{
+            margin-right:5px;
+            flex-shrink: 0;
+        }
+
+    }
+    .container{
+        position:absolute;
+        top:100%;
+        left:0;
+        pointer-events: none;
+        
+        width:100%;
+        transition:transform 0.2s ease-out;
+
+
+        overflow:hidden;
+        .containerInside{
+            background-color:#FFF;//darken($colorPurple,20%);
+            transition:transform 0.2s ease-out;
+            transform:translate(0,-100%);
+            max-height:250px;
+        }
+
+    }
+    &.open{
+        .ddBtn{
+            border:2px solid $colorPurple;
+
+        }
+        .container{
+            pointer-events: auto;
+            .containerInside{
+                transform:translate(0,0);
+            }
+        }
+    }
+}

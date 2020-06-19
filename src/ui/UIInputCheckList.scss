@@ -1,0 +1,134 @@
+@import '../vars';
+.inputCheckList{
+    border:2px solid rgba(0,0,0,.1);
+    
+    border-radius:6px;
+    padding-bottom:15px;
+
+    .inputCheckListHeader{
+        padding:15px;
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        .input{
+            width:100%;
+            max-width:400px;
+            .inputElement{
+                border:0;
+                background-color:rgba(0,0,0,0.05);
+                padding-right:42px;
+                &:disabled{
+                }
+            }
+            .clear{
+                position:absolute;
+                top:0;
+                right:0;
+                width:42px;
+                height:42px;
+                pointer-events: none;
+                svg{
+                    width:60%;
+                    height:60%;
+                    
+                }
+                &.searching{
+                    color:$colorPurple;
+                    cursor: pointer;
+                    pointer-events: auto;
+                    &:hover,&:active{
+                        color:$colorPurple2;
+                    }
+                }
+            }
+        }
+    }
+    .inputCheckListContainer{
+        
+        max-height:300px;
+        padding:0 15px;
+
+        .noData{
+            height:100%;
+        }
+        .inputCheckListItem{
+            min-height:45px;
+            align-items: stretch;
+            font-size:16px;
+            line-height:normal;
+            transition:all 0.2s;
+            overflow:hidden;
+            justify-content: flex-start;
+            &.indent{
+                .checkboxBox{
+                    width:80px;
+                }
+            }
+            .checkboxBox{
+                flex-shrink: 0;
+                display:flex;
+                flex-direction: row;
+                align-items: center;
+                height:auto;
+                &:before{
+                    top:50%;
+                    transform:translate(0,-50%);
+                    
+                    right:5px;
+                }
+                input{
+                    width:100%;
+                    height:100%;
+                }
+                .icon{
+                    right:5px;
+                    top:50%;
+                    transform:translate(0,-50%) scale(3,3);
+                }
+            }
+            .checkboxLabel{
+                flex-grow:1;
+                height:auto;
+                display:flex;
+                flex-direction: row;
+                align-items: center;
+                label{
+                    font-weight:400;
+                    flex-grow:1;
+                    height:100%;
+                    padding:10px 0 10px 6px;
+                }
+            }
+            &.checked{
+                .checkboxLabel{
+                    label{
+                        font-weight:500;
+                    }
+                }
+                .checkboxBox{
+                    .icon{
+                        transform:translate(0,-50%) scale(1,1);
+                    }
+                    &:before{
+                    }
+                }
+            }
+            &:hover{
+                background-color:$colorLGP;
+            }
+        }
+        
+    }
+    &.disabled{
+        background-color:rgba(0,0,0,0.1);
+        pointer-events: none;
+        .inputCheckListContainer{
+            .inputCheckListItem{
+                .checkboxBox{
+                    .icon{
+                    }
+                }
+            }
+        }
+    }
+}

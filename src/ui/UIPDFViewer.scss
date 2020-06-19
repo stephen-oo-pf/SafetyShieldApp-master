@@ -1,0 +1,80 @@
+@import '../_vars.scss';
+.pdf{
+    width:100%;
+    font-size:16px;
+    .pdfHeader{
+        padding:10px 0;
+        height:62px;
+        text-align:center;
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border-bottom:1px solid rgba(0,0,0,0.1);
+        
+        .pageCount{
+            margin:0 20px;
+            display:inline-block;
+            .pageCountTitle{
+                margin-right:10px;
+            }
+            span{
+                font-weight:600;
+            }
+            .input{
+                .inputElement{
+                    font-size:16px;
+                    width:80px;
+                }
+                margin-right:10px;
+            }
+        }
+    }
+    .pdfContent{
+        padding:10px;
+        position:relative;
+        .loadingPDF{
+            position:relative;
+            text-align:center;
+            
+            .loadingTitle{
+                padding:30px 0 20px 0;
+                font-size:20px;
+            }
+            .fileSize{
+                padding-bottom:30px;
+            }
+            .loadingPDFIcon{
+
+            }
+
+            span{
+                font-weight:500;
+            }
+        }
+        .react-pdf__message--loading{
+            display:none;
+            position:absolute;
+            top:0;
+            left:50%;
+            transform:translate(-50%,0);
+            margin-top:100px;
+            width:40px;
+            height:40px;
+            display:block;
+            position:relative;
+            font-size:0;
+        }
+        .react-pdf__message--error{
+            text-align:center;
+            padding:30px 0;
+            color:$colorRed;
+        }
+        .react-pdf__Page{
+            text-align:center;
+            canvas{
+                display:inline-block !important;
+            }
+        }
+    }
+}

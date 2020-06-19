@@ -1,0 +1,53 @@
+.d3Graph{
+    .recharts-tooltip-wrapper{
+        .whiteBox{
+            width:160px;
+            padding:20px;
+            box-shadow: 0 10px 24px 0 rgba(29,42,68,0.12);
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.4s;
+            .graphTooltipName{
+            }
+            .graphTooltipValue{
+                font-weight:600;
+                margin-right:10px;
+            }
+            &:after{
+                content:"";
+                width:0;
+                height:0;
+                border:10px solid transparent;
+                position:absolute;
+                border-top:10px solid #FFF;
+                bottom:-20px;
+                left:50%;
+                transform:translate(-50%,0);        
+            }
+        }
+        &.recharts-tooltip-wrapper-right{
+            &.recharts-tooltip-wrapper-bottom{
+
+                .whiteBox{
+                    transform:translate(-50%,-100%) translate(-10px,-20px);
+                }
+            }
+        }
+        &.recharts-tooltip-wrapper-left{
+            &.recharts-tooltip-wrapper-top{
+
+                .whiteBox{
+                    transform:translate(50%,0);
+                }
+            }
+            &.recharts-tooltip-wrapper-bottom{
+
+                .whiteBox{
+                    transform:translate(50%,-100%) translate(0,-20px);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.calendarStyle{
+    .drillCalendar{
+        &.react-calendar{
+
+            .react-calendar__month-view__days__day{
+                position:relative;
+                cursor:default;
+                
+                .dayHitArea{
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    width:100%;
+                    height:100%;
+                    cursor: pointer;
+                    z-index:6;
+                }
+                &.selectedDate{
+                    overflow: visible !important;
+                    .drillCalendarPopup{
+                        z-index:50;
+                        top:-5px;
+                        left:50%;
+                    }
+                }
+            }
+        }
+    }
+}

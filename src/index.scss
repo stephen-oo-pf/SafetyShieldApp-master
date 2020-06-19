@@ -1,0 +1,115 @@
+@import './vars';
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+
+//FONT
+html,body,div,span,h1,h2,h3,h4,h5,input,select,textarea,button,p,a,b,u,i,strong,table,td,th,tr,ul,ol,li,footer,header{
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+
+
+@font-face {
+  font-family: 'ssIncidentIcons';
+  src: url('./assets/fonts/ssIncidentIcons.eot');
+  src: url('./assets/fonts/ssIncidentIcons.eot?#iefix') format('embedded-opentype'),
+       url('./assets/fonts/ssIncidentIcons.woff') format('woff'),
+       url('./assets/fonts/ssIncidentIcons.ttf') format('truetype'),
+       url('./assets/fonts/ssIncidentIcons.svg#ssIncidentIcons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+
+//COLOR SHORTCUTS
+.purple{
+  color:$colorPurple;
+}
+
+
+//APP SET 100% HEIGHT
+html,body,#root{
+  height:100%;
+  >.centerBox{
+    text-align: center;
+  }
+}
+body{
+  
+  background: rgb(0,178,225);
+  background: linear-gradient(135deg, rgba(0,178,225,1) 0%, rgba(149,206,92,1) 100%);
+}
+
+//LINKS
+a{
+  text-decoration: none;
+  color:$colorText;
+  &:hover{
+    color:$colorPurple;
+  }
+}
+
+//GENERAL SHADOWS
+.boxShadow{
+  box-shadow:$boxShadow;
+}
+.boxShadowLight{
+  box-shadow:$boxShadowLight;
+}
+
+
+//MISC
+.greyBubble{
+  background-color:rgba(0,0,0,0.1);
+  border-radius:20px;
+  padding:10px 12px;
+  display:inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+p{
+  &.small{
+    font-size:12px;
+  }
+}
+
+//LAYOUTS
+.twocolumns{
+  display:flex;
+  flex-direction: row;
+  align-items: flex-start;
+  
+  .twocolumnsA{
+      flex-grow:1;
+  }
+  .twocolumnsB{
+      margin-left:30px;
+      width:300px;
+      flex-shrink:0;
+      padding:16px;
+  }
+}
+
+
+@media(max-width:$resize1){
+  .twocolumns{
+    flex-direction: column-reverse;
+    margin-bottom:0;
+    .twocolumnsA{
+      width:100%;
+
+    }
+    .twocolumnsB{
+      width:100%;
+      margin-left:0;
+      margin-bottom:30px;
+    }
+  }
+
+}

@@ -1,0 +1,113 @@
+@import '../vars';
+
+
+
+.intradoLogo{
+    background-repeat: no-repeat;
+    background-size: 125px auto;
+    width:125px;
+    height:46px;
+}
+.safetyShieldLogo{
+    background-size: 140px auto;
+    background-repeat: no-repeat;
+    background-position: center 55%;
+    color:transparent;
+    height:48px;
+    text-align:center;
+    font-size:0;
+}
+
+.boxFrame{
+    background: rgb(0,178,225);
+    background: linear-gradient(135deg, rgba(0,178,225,1) 0%, rgba(149,206,92,1) 100%);
+    //background-image: url('../assets/images/bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+
+    .bg{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        background-size: cover; 
+        opacity:0.2;
+        z-index: 3;
+    }
+    .bgLogo{
+        position:absolute;
+        top:5%;;
+        left:5%;
+        width:145px;
+        height:40px;
+        z-index: 5;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        
+    }
+    
+    .centerBoxContainer{
+        z-index:8;
+            
+        .intradoLogo{
+            position:absolute;
+            top:40px;
+            left:40px;
+        }
+        .safetyShieldLogo{
+            
+        }
+        .pageTitle{
+            text-align:center;
+            margin-top:30px;
+            margin-bottom:42px;
+            font-size:18px;
+            color:$colorDarkGrey;    
+            
+            line-height:normal;       
+        }
+        .pageText{
+            line-height:26px;
+            margin-bottom:20px;
+        }
+        
+        .options{
+            margin-top:10px;
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            .button{
+                padding:0;
+            }
+        }
+    }
+    
+    &.animateIntro{
+        .bg{
+            opacity:0;
+            animation: fadeInBG 3s ease-out 0s;
+            animation-fill-mode: forwards;
+        }
+    }
+    /*
+    
+    &.animateIntro{
+        &:before{
+            opacity:0;
+            animation: fadeInBG 0.5s ease-out 0.1s;
+            animation-fill-mode: forwards;
+        }
+        .centerBoxContainer{
+
+            opacity:0;
+            animation: fadeAndScaleIn 0.5s ease-out 0.5s;
+            animation-fill-mode: forwards;
+        }
+    }
+    */
+}

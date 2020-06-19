@@ -1,0 +1,63 @@
+@import '../_vars.scss';
+.progressBar{
+    overflow:hidden;
+    position:relative;
+
+    .progressBarInside{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        transition:transform 0.2s ease-out;
+    }
+    &.style_roundedSmall{
+        height:16px;        
+        border-radius:8px;
+        .progressBarInside{
+            
+        }
+        &.blueYellow{
+            background-color:$colorYellow;
+            .progressBarInside{
+                background-color: $colorBlue;
+            }
+
+        }
+        &.greenTrans{
+            .progressBarInside{
+                background-color: $colorEmerald;
+            }
+
+        }
+    }
+    &.style_defaultStyle{
+        height:20px;
+        background-color:rgba(0,0,0,0.1);
+
+        .progressBarInside{
+            border-radius:5px;
+            background-color:$colorBlue;
+            &:after{
+                content:"";
+                display:block;
+                width:100%;
+                height:100%;
+                background-image:url('../assets/images/progressbar-texture.png');
+                background-position: 0 50%;
+                background-repeat: repeat-x;
+                animation-name: loadingShift;
+                animation-duration: 1s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                opacity:0.4;
+                border-radius:5px;
+            }
+        }
+    }
+}
+
+@keyframes loadingShift{
+    0%{background-position: 0 50%;}
+    100%{background-position: 30px 50%;}
+}

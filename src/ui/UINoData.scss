@@ -1,0 +1,16 @@
+.noData{
+    flex-direction: column;
+    height:200px;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    .noDataMsg{
+        margin-bottom:5px;
+    }
+    .noDataFilter{
+        font-weight:700;
+    }
+    .centerBoxContainer{
+       overflow:visible; 
+    }
+}

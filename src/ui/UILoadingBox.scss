@@ -1,0 +1,9 @@
+.loadingBox{
+    height:200px;
+    .centerBoxContainer{
+       overflow:visible; 
+    }
+    &.fullHeight{
+        height:100%;
+    }
+}

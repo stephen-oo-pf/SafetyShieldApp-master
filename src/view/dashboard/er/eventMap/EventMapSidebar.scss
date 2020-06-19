@@ -1,0 +1,49 @@
+@import '../../../../vars';
+.eventMapSidebar{
+    background-color:#FFFFFF;
+    overflow: hidden;
+    transition:width 0.5s ease-out;
+    .eventMapSidebarInside{
+        display:flex;
+        flex-direction: column;
+        height:100%;
+        border-left:1px solid #CCCCCC;
+        .sidebarHeader{
+            .title{
+                padding:15px;
+                font-size:18px;
+                &:last-child{
+                    border-bottom:1px solid rgba(0, 0, 0, 0.1);
+
+                }
+            }
+            flex-shrink: 0;
+            .tabBar{
+                border-top:1px solid rgba(0, 0, 0, 0.05);
+                &.horizontal{
+                    .tabBarItem{
+                        min-width: 0;
+                        flex-grow:1;
+                        padding:15px 20px;
+                        justify-content: center;
+                        font-size:12px;
+                        .icon{
+                            margin-right:10px;
+                        }
+                        .label{
+                            flex-grow:0;
+                        }
+                    }
+                }
+            }
+        }
+        .sidebarContent{
+            flex-grow: 1;
+            min-height:0;
+            .sidebarContentView{
+
+            }
+        }
+    }
+}
+

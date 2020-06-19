@@ -1,0 +1,37 @@
+.eventsListWidget{
+    
+    .whiteBox{
+        display:flex;
+        flex-direction: column;
+
+        .tabBar{
+            flex-shrink: 0;
+            .tabBarItem{
+                min-width: 0;
+                padding-left:10px;
+                padding-right:10px;
+                flex-grow: 1;
+                justify-content: center;
+                .icon{
+                    margin-right:6px;
+                }
+                .label{
+                    white-space: nowrap;
+                    flex-grow:0;
+                }
+            }
+        }
+        .eventsListContent{
+            flex-grow: 1;
+            .alertList{
+                min-height: 0;
+                padding:18px;
+            }
+            overflow: hidden;
+        }
+        .lastUpdate{
+            flex-shrink: 0;
+            padding-left:18px;
+        }
+    }
+}

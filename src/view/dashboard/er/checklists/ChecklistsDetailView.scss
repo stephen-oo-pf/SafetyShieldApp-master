@@ -1,0 +1,47 @@
+@import '../../../../vars';
+.checklistsDetail{
+    .detailMainContent{
+        
+        .viewFieldsItem{
+            
+            .value{
+                ul{
+                    padding-left:5px;
+                    li{
+                        display:flex;
+                        flex-direction: row;
+                        align-items: center;
+                        line-height:normal;
+                        padding:10px 0;
+                        border-bottom:1px solid rgba(0,0,0,0.1);
+                        .index{
+                            width:30px;
+                            height:30px;
+                            display:flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius:50%;//4px;
+                            color:$colorPurple;
+                            font-weight:600;
+                            background-color:$colorPurple;
+                            color:#FFF;
+                            margin-right:20px;
+                            
+                        }
+                        .text{
+                            white-space: pre;
+                        }
+
+                        &:last-child{
+                            border-bottom:0;
+                            margin-bottom:0;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+    
+}

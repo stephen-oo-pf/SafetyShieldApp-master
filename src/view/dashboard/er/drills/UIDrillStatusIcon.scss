@@ -1,0 +1,36 @@
+@import '../../../../vars';
+.drillStatusIcon{
+    .icon{
+        border-radius:50%;
+        width:30px;
+        height:30px;
+        svg{
+            width:24px;
+            height:24px;
+        }
+    }
+    .iconLabel{
+        font-weight:500;
+    }
+    &.status_C{
+        .icon{
+            background-color:$colorEmerald;
+            color:#FFF;
+        }
+        
+    }
+    &.status_P{
+        .icon{
+            background-color:$colorYellow;
+            color:#FFF;
+        }
+        
+    }
+    &.status_I{
+        .icon{
+            background-color:$colorBlue;
+            color:#FFF;
+        }
+        
+    }
+}

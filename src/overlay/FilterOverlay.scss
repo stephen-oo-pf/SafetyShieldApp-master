@@ -1,0 +1,32 @@
+.filterOverlay{
+
+    
+    .whiteBox{
+        .overlayContent{          
+            padding:0 30px;
+            .fieldArea{
+                margin-bottom:0px;
+
+                >.fieldItem{
+                    margin-bottom:20px;
+                    .fieldArea{
+                        padding-bottom:10px;
+                        .fieldItem{
+                            margin-bottom:2px;
+                        }
+                    }    
+                    &:last-child{
+                        margin-bottom:0;
+                    }
+                }            
+            }
+        }
+        
+        .overlayFooter{
+            padding-top:10px;
+        }
+    }
+    .btnReset{
+        padding-left:0;
+    }
+}

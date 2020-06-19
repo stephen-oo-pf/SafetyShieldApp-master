@@ -1,0 +1,31 @@
+@import '../_vars.scss';
+.editFields{
+
+    
+    .input,.viewFieldsItem{
+        .inputElement{
+            height:42px;
+            font-size:16px;
+        }
+        textarea{
+            &.inputElement{
+
+                height:200px;
+            }
+        }
+        &.fullWidth{
+            textarea{
+                &.inputElement{
+                    height:100px;
+                }
+            }
+        }
+    }
+    .editFieldsSections{
+        .tabBar{
+            margin-bottom:30px;
+        }
+    }
+
+
+}

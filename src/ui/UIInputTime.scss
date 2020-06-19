@@ -1,0 +1,59 @@
+@import '../vars';
+
+.inputTime{
+    .icon{
+        color:$colorGrey;
+        &:hover{
+            color:$colorPurple;
+        }
+    }
+    .react-time-picker{
+        display:flex;
+        
+        font-size:16px;
+        .react-time-picker__wrapper{
+            font-size:16px;
+            border-radius:8px;
+            
+            border:2px solid rgba(0,0,0,0.1);
+            padding:2px;
+            .react-time-picker__inputGroup{
+                font-size:16px !important;
+                input{
+                    appearance: textfield;      
+                    padding-left:10px;  
+                    padding-right:10px;
+                }
+                
+            }
+            button{
+                .icon{
+                }
+            }
+        }
+        .react-time-picker__clock{
+            width:auto;
+            height:auto;
+            box-shadow:$boxShadowLight;
+            border-radius:6px;
+            border:0;
+            padding:16px;
+        }
+        .react-clock__face{
+            border:0;
+            background-color:rgba(0,0,0,0.1);
+        }
+        .react-clock__minute-hand__body{
+        
+        }
+        .react-clock__hand__body{
+            background-color:$colorPurple;
+            border-radius:6px;
+        }
+    }
+    p{
+        margin-top:6px;
+        font-size:12px;
+        color:$colorBlack;
+    }
+}

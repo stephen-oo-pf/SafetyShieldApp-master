@@ -1,0 +1,29 @@
+.drillsMaster{
+    .drillsUpperSection{
+        margin-bottom:30px;
+        display:flex;
+        flex-direction: row;
+        align-items: flex-start;
+        .title{
+            margin-bottom:20px;
+        }
+        .calendarContainer{
+            margin-right:80px;
+        }
+        .completedThisYear{
+
+        }
+    }
+    .masterOptionsFiltering{
+        .masterOptionsFilteringOptions{
+            
+            margin-top:-54px;        
+            justify-content: flex-end;   
+            margin-bottom:20px;
+        }
+        .masterOptionsFilteringTags{
+            margin-bottom:0;
+            margin-top:0;
+        }
+    }
+}

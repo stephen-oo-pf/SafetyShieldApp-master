@@ -1,0 +1,70 @@
+@import '../vars';
+.incidentTableFrame{
+    .incidentTableFrameHeader{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom:14px;
+        .incidentTableFrameHeaderLeft{
+            flex-grow:1;
+        }
+        .incidentTableFrameHeaderRight{
+            margin-left:10px;
+            flex-shrink:0;
+        }
+        .incidentTableFrameHeaderTitle{
+            flex-grow:1;
+            .title{
+                margin-bottom:6px;
+            }
+            p{
+                margin-bottom:4px;
+            }
+        }
+        p{
+            font-size:14px;
+            span{
+                font-weight:600;
+            }
+        }
+    }
+    .masterOptionsFiltering{
+        .masterOptionsFilteringOptions{
+            margin-top:-60px;        
+            justify-content: flex-end;   
+            margin-bottom:20px;
+        }
+        .masterOptionsFilteringTags{
+            margin-bottom:10px;
+        }
+    }
+
+
+    .tableRow{
+        .commentBox{
+            padding:8px 30px;
+            display:inline-flex;
+            
+        }
+        &:nth-child(odd){
+            .commentBox{
+                background-color:rgba(0,0,0,0.05);
+            }
+        }
+
+        
+        .dataKey_date{
+            font-size:14px;
+            text-transform: uppercase;
+        }
+        .dataKey_userName{
+            font-size:16px;
+            .opsRole{
+                font-size:14px;
+                margin-top:4px;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+}

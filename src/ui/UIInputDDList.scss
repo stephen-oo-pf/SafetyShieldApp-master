@@ -1,0 +1,115 @@
+@import '../_vars.scss';
+.inputListDD{
+    border:2px solid rgba(0,0,0,0.1);
+    border-radius:6px;
+    padding:16px;
+    .inputListDDHeader{
+        display:flex;
+        flex-direction: row;
+        align-items: flex-start;
+        form{
+            display:flex;
+            flex-grow:1;
+            
+            max-width:560px;
+
+            >.input{
+                margin:0;
+                width:100%;
+            }
+        }
+        >.button{
+            margin-left:20px;
+            border-radius:50%;
+        }
+        margin-bottom:16px;
+    }
+    .inputListDDContainer{
+        border-top:2px solid rgba(0,0,0,0.1);
+        
+        margin-bottom:-4px;
+        .inputListContainerDropArea{
+            height:100%;
+            &.isDraggingOver{
+                .inputListItem{
+                    transition:all 0.3s ease-out;
+                }
+            }
+        }
+        .inputListEmpty{
+            padding:16px 0;
+            
+
+        }
+        .inputListItem{
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            padding:10px 0;
+            background-color:#FFF;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0);
+            border-bottom:1px solid rgba(0,0,0,0.1);
+            cursor:grab;
+            position:relative;
+            &:active{
+                cursor:grabbing;
+            }
+            .index{
+                width:30px;
+                height:30px;
+                display:flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                border-radius:50%;//4px;
+                color:$colorPurple;
+                font-weight:600;
+                background-color:$colorPurple;
+                color:#FFF;
+                flex-shrink: 0;
+
+            }
+            .textInput{
+                flex-grow:1;
+                padding:0px;
+                resize: none;
+                font-size:16px;
+                line-height:22px;
+            }
+            .drag{
+                color:$colorDarkGrey;
+                flex-shrink: 0;
+                
+                margin-left:10px;
+                margin-right:10px;
+                pointer-events: none;
+
+            }
+            .delete{
+                color:$colorDarkGrey;
+                margin-left:10px;
+                width:30px;
+                height:30px;
+                flex-shrink: 0;
+                cursor: pointer;
+                &:hover{
+                    color:$colorPurple;
+                }                
+            }
+            &.isDragging{
+                box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+                &:after{
+                    content:"";
+                    position:absolute;
+                    bottom:-10px;
+                    left:0;
+                    width:100%;
+                    height:2px;
+                    background-color:rgba($colorBlue,0.5);
+                }
+            }
+
+            
+        }
+    }
+}

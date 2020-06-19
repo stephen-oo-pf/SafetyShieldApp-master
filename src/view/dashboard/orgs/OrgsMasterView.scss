@@ -1,0 +1,265 @@
+@import '../../../vars';
+
+$orgListItemTrans:all 0.3s ease-out;
+
+
+@mixin match{    
+    background-color:$colorPurple;
+    color:#FFF;
+}
+
+.orgsMaster{
+    .masterFrame{
+        .masterContent{
+            position:relative;
+            padding-bottom:40px;
+            .orgsListItem{
+                transition:$orgListItemTrans;
+                box-shadow: $boxShadowLight;
+                position:relative;
+                border-radius:6px;
+                margin-bottom:4px;
+                
+                .orgItem{
+                    display:flex;
+                    flex-direction:row;
+                    align-items: center;
+                    height:50px;
+                    transition:$orgListItemTrans;
+                    background-color:#FFF;
+                    border-radius:6px;
+                    cursor: pointer;
+                    position:relative;
+                    .logo{
+                        width:100px;
+                        flex-shrink:0;
+                        display:flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        img{
+                            width:80px;
+                            height:40px;
+                            object-fit: contain;
+                        }
+                    }
+                    .name{
+                        padding-left:15px;
+                        flex-grow:1;
+                        font-weight:500;
+                        transition:$orgListItemTrans;
+                        position:relative;
+                        z-index:3;
+                        pointer-events: none;
+                    }
+                    .orgCount{
+                        font-size:15px;
+                        width:200px;         
+                        opacity:0.54;    
+                        pointer-events: none;  
+                        position:relative;
+                        z-index:3;     
+                    }
+                    .icon{
+                        border-right:1px solid rgba(0,0,0,0.1);
+                        flex-shrink:0;
+                        width:60px;
+                        height:50px;
+                        svg{
+                            width:30px;
+                            height:30px;
+                        }
+                        position:relative;
+                        z-index:5;
+                    }
+                    .orgItemClick{
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        width:100%;
+                        height:100%;
+                        z-index:1;
+                    }
+                    &:hover,&:active{
+                        .name{
+                            color:$colorPurple2;
+                        }
+                    }
+                }
+                
+                &.noChildren{
+                    .orgItemContent{
+                        .orgItemContentOptions{
+                            overflow:hidden;
+                            border-bottom-left-radius: 6px;
+                            border-bottom-right-radius: 6px;
+                            .button{
+                                border-bottom:0;
+                            }
+                        }
+                    }
+                }
+                /*&.match{                        
+                    .orgItem{
+                        @include match;
+                        border-bottom:1px solid rgba(0,0,0,0.5);
+                        &:hover,&:active{
+                            .name{
+                                color:#FFF;
+                            }
+                            background-color:$colorPurple2;
+                        }
+                    }
+                    &.noChildren{
+                        .orgItemContent{
+                            .orgItemContentOptions{
+                                .button{
+                                    border-bottom:0;
+                                }
+                            }
+                        }
+                    }
+                    .orgItemContent{
+                        .orgItemContentOptions{
+                            background-color:darken($colorPurple,10%);
+                            .button{
+                                color:#FFF;
+                                border-bottom:1px solid rgba(0,0,0,0.5);
+                                &:hover,&:active{
+                                    .name{
+                                        color:#FFF;
+                                    }
+                                    background-color:$colorPurple2;
+                                }
+                            }
+                        }
+                    }
+                }*/
+                .orgItemContent{
+                    max-height:0;
+                    overflow: hidden;
+                    transition:$orgListItemTrans;
+                    .orgItemContentOptions{
+                        height:46px;
+                        display:flex;
+                        flex-direction: row;
+                        align-items: center;
+                        border-bottom:1px solid rgba(0,0,0,0.1);
+                        border-top:1px solid rgba(0,0,0,0.1);
+                        transition:$orgListItemTrans;
+                        background-color:$colorLGP;
+                        .button{
+                            height:46px;
+                            border-radius:0;
+                            transition:$orgListItemTrans;
+                            background-color:transparent;
+                            .icon{
+                                width:20px;
+                                height:20px;
+                            }
+                            
+                            &:hover,&:active{
+                                .name{
+                                    color:$colorPurple;
+                                }
+                            }
+                        }
+                    }
+                    .orgItemContentContainer{
+                        .orgsListSubItem{
+                            display:flex;
+                            flex-direction: row;
+                            align-items: center;
+                            height:50px;
+                            transition:$orgListItemTrans;
+                            position:relative;
+                            background-color:#FFF;
+                            
+                            .sub{
+                                margin-left:15px;
+                                margin-right:15px;
+                                width:15px;
+                                height:15px;
+                                opacity:0.5;
+                            }
+                            .logo{
+                                width:100px;
+                                flex-shrink:0;
+                                display:flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: center;
+
+                                img{
+                                    width:80px;
+                                    height:30px;
+                                    object-fit: contain;
+                                }
+                            }
+                            .name{
+                                flex-grow:1;
+                                font-size:14px;
+                                transition:$orgListItemTrans;
+                            }
+                            .hitArea{
+                                position:absolute;
+                                top:0;
+                                left:0;
+                                width:calc(100% - 100px);
+                                height:100%;
+                                cursor: pointer;
+                            }
+                            .btns{
+                                flex-shrink:0;
+                                height:50px;
+                                .button{
+                                    height:50px;
+                                    background-color: transparent;
+                                }
+                            }
+                            
+                            &:last-child{
+                                border-bottom-right-radius: 6px;
+                                border-bottom-left-radius: 6px;
+                            }
+                            &:hover,&:active{
+                                .name{
+                                    color:$colorPurple2;
+                                }
+                                background-color:#FFF;
+                            }
+                            /*&.match{     
+                                @include match;     
+                                .button{
+                                    color:#FFF;
+                                    &:hover,&:active{
+
+                                    }    
+                                }         
+                                
+                                &:hover,&:active{
+                                    .name{
+                                        color:#FFF;
+                                    }
+                                    background-color:$colorPurple2;
+                                }               
+                            }*/
+                            
+                        }
+                    }
+                }
+                &.expanded{
+                    .orgItem{
+                        
+                        border-bottom-right-radius:0px;
+                        border-bottom-left-radius:0px;
+                    }
+                    .orgItemContent{
+                        max-height:1000px;
+                    }
+                    margin-bottom:20px;
+                }
+            }
+        }
+    }
+}

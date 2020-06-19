@@ -1,0 +1,194 @@
+@import '../vars';
+
+.alertList{
+    .noData{
+        width:100%;
+        height:100%;
+    }
+    .alertListInside{
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-right:-10px;
+        margin-bottom:-10px;
+
+        .alertListItem{
+            padding:20px;
+            line-height:normal;
+            flex-grow:1;
+            min-width:calc(50% - 10px);//260px;
+            margin-right:10px;
+            margin-bottom:10px;
+            border-radius:18px;
+            position:relative;
+            box-shadow:0 0 6px 0 rgba(0,0,0,0.2);
+            &.red{
+                background-color:$colorLightRed;
+                border:1px solid darken($colorLightRed,5%);
+            }
+            &.yellow{
+                background-color:$colorLightYellow;
+                border:1px solid darken($colorLightYellow,30%);
+            }
+            &.green{
+                background-color:$colorLightGreen;
+                border:1px solid darken($colorLightGreen,30%);
+            }
+            &.blue{
+                background-color:$colorLightBlue;
+                border:1px solid darken($colorLightBlue,20%);
+            }
+            &.grey{
+                background-color:#F5F5F5;
+                border:1px solid darken(#F5F5F5,5%);
+                
+            }
+            
+            .alertListItemHeader{
+                display:flex;
+                flex-direction: row;
+                margin-bottom:20px;
+                align-items: center;
+                .alertListItemOrg{
+                    font-size:14px;
+                    color:$colorGrey;
+                    font-weight:500;
+                    margin-right:auto;
+                    transition:all 0.3s;
+                    cursor: pointer;
+                    &:hover,&:active{
+                        color:$colorPurple;
+                    }
+                }
+                .alertListItemTime{
+                    font-size:14px;
+                    font-weight:500;
+                    text-transform: uppercase;
+                }
+            }
+            .alertListItemInfo{
+                display:flex;
+                flex-direction: row;
+                .badge{
+                    margin-top:6px;
+                    margin-right:10px;
+                }
+                .incidentTypeIcon{
+                    .icon{
+                        width:54px;
+                        height:54px;
+                        background-color:$colorBlack;
+                    }
+                    margin-right:20px;
+                }
+                .alertListItemInfoDetails{
+                    .alertListItemLabel{
+                        margin-bottom:8px;
+                        font-size:20px;
+                    }
+                    .alertListItemDesc{
+                        color:$colorGrey;
+                        font-size:14px;
+                        font-weight:500;
+                        .loadingIcon{
+                            display:inline-flex;
+                            height:12px;
+                            .icon{
+                                width:14px;
+                                height:14px;
+                            }
+                        }
+                        span{
+                            margin-left:10px;
+                            font-weight:400;        
+                        }
+                        .bigDesc{
+                            font-size:20px;
+                            font-weight:400;
+                            color:$colorBlack;
+                            line-height: 10px;
+                        }
+                    }                
+                }
+                .button{
+                    margin-left:auto;
+                }
+                margin-bottom:14px;
+            }
+            .alertListItemFooter{
+                border-top:1px solid $colorLightGrey;
+                padding-top:14px;
+                margin-bottom:0px;
+                font-size:18px;
+                
+            }
+            &.smaller{
+                padding:12px;
+                cursor: pointer;
+                .alertListItemHeader{
+                    margin-bottom:8px;
+                    .alertListItemTime{
+                        font-size:12px;
+                        color:$colorGrey;
+                    }
+                }
+                .alertListItemInfo{
+                    margin-bottom:0px;
+                    .incidentTypeIcon{
+                        .icon{
+                            width:34px;
+                            height:34px;
+                            svg{
+                                width:24px;
+                                height:24px;
+                            }
+                        }
+                        margin-right:10px;
+                    }
+                    .alertListItemInfoDetails{
+                    
+                        .alertListItemLabel{
+                            font-size:16px;
+                            margin-bottom:2px;
+                        }
+                        .alertListItemDesc{
+                        }
+                    }
+                }
+            }
+            &.hideOrgAndIncident{
+                .alertListItemHeader{
+                    margin-bottom:10px;
+                    .alertListItemTime{
+                        font-weight:400;
+                    }
+                }
+                .alertListItemInfo{
+                    margin-bottom:0;
+                    .alertListItemInfoDetails{
+                        .alertListItemDesc{
+                            color:#000;   
+                            span{
+                                padding:5px 0;
+                                color:$colorGrey;
+                            }
+                        }
+                        .alertListItemComments{
+                            margin-top:10px;
+                            color:#000;   
+                            font-size:14px;
+                            font-weight:500;
+                            span{
+                                margin-left:10px;
+                                padding:5px 0;
+                                color:$colorGrey;
+                                font-weight:400;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

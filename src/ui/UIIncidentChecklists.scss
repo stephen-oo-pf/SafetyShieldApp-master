@@ -1,0 +1,164 @@
+@import '../vars';
+.incidentChecklists{
+    .incidentTableFrameHeader{
+        .statusLegend{
+            margin-left:auto;
+            .iconWLabel{
+                .icon{
+                    width:14px;
+                    height:14px;
+                    svg{
+                        display:none;
+                    }
+                }
+                .iconLabel{
+                    font-size:12px;
+                    font-weight:400;
+                    color:$colorGrey;
+                }
+                margin-right:20px;
+                &:last-child{
+                    margin-right:0;
+                }
+            }
+        }
+    }
+    >.whiteBox{
+
+        >.table{
+            >.tableContent{
+                >.tableRow{
+                    display:flex;
+                    flex-direction: column;
+                    align-items: stretch;
+                    .basicRow{
+                        display:flex;
+                        flex-direction: row;
+                        align-items: center;
+                        font-size:14px;
+                        position:relative;
+                        .dataKey_assignedUsers,.dataKey_nameOpsRole{
+                            transition:all 0.3s;
+                        }
+                        &:hover{
+                            
+                            >.icon{
+                                color:$colorPurple;
+
+                            }
+                            .dataKey_assignedUsers,.dataKey_nameOpsRole{
+                                color:$colorPurple;
+
+                            }
+                        }
+                        
+                        &:before{
+                            content:"";
+                            position:absolute;
+                            z-index:3;
+                            top:0;
+                            left:0;
+                            height:100%;
+                            width:0;
+                            background-color:$colorPurple;
+                            transition:0.3s all;
+                        }
+                        >.icon{
+                            transition:all 0.3s;
+                            position:absolute;
+                            top:6px;
+                            left:10px;
+                            z-index:3;
+                            pointer-events: none;
+                        }
+                        >.loadingIcon{
+                            position:absolute;
+                            top:30px;
+                            left:12px;
+                            pointer-events: none;
+                            .icon{
+                                width:20px;
+                                height:20px;
+                            }
+                        }
+                        .rowClick{
+                            position:absolute;
+                            top:0;
+                            left:0;
+                            width:100%;
+                            height:100%;
+                            cursor: pointer;
+                            z-index:1;
+                        }
+                        
+                        .tableRowColumn{
+                            display:flex;
+                            flex-direction: row;
+                            align-items: center;
+                            padding:0 10px;
+                            height:60px;
+                            position:relative;
+                            z-index:2;
+                            pointer-events: none;
+                        }
+                        .checklistNameOpsColumnRowCell{
+                            display:flex;
+                            flex-direction: column;
+                            font-weight:500;
+                            padding-left:34px;
+                            .opsRole{
+                                font-weight:400;
+                                text-transform: uppercase;
+                                margin-top:5px;
+                            }
+                        }
+                        .dataKey_assignedUsers{
+                            
+                        }
+                        .dataKey_status{
+                            pointer-events: auto;
+                        }
+                    }
+                    .advancedRow{
+                        background-color:#F2F2F2;
+                        overflow:hidden;
+                        transition:all 0.5s;
+                        .advancedRowInside{
+                            padding:0 30px 30px;
+                            .whiteBox{
+                                &:before{
+                                    z-index:0;
+                                }
+                                .table{
+                                    position:relative;
+                                    .tableContent{
+                                        .tableRow{
+                                            .dataKey_comments{
+                                                .button{
+                                                    padding-left:50px;
+
+                                                    .icon{
+                                                        color:$colorPurple;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.advancedShowing{
+                        .basicRow{
+    
+                            &:before{
+                                width:5px;
+    
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

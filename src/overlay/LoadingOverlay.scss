@@ -1,0 +1,23 @@
+@import '../_vars.scss';
+.loading{
+    font-weight:500;
+    .whiteBox{
+        .overlayHeader{
+            background-color:$colorPurple;
+            color:#FFF;
+            justify-content: center;
+            .title{                
+                font-size:16px !important;
+            }
+        }
+        .overlayContent{
+            overflow:hidden;
+            .loadingBox{
+                height:146px;
+                .loadingMsg{
+                    margin-top:30px;
+                }
+            }
+        }
+    }
+}

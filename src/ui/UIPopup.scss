@@ -1,0 +1,44 @@
+
+$popupOutroScale:scale(0.8,0.8);
+.popup{
+    position:absolute;
+    opacity:0;
+    transition:all 0.3s;
+    pointer-events: none;
+    box-shadow: 0 10px 24px 0 rgba(29,42,68,0.12);
+
+    
+    .closeBtn{
+        position:absolute;
+        top:0;
+        right:0;
+        .icon{
+            width:20px;
+            height:20px;
+        }
+    }
+    &:after{
+        content:"";
+        width:0;
+        height:0;
+        border:10px solid transparent;
+        position:absolute;
+
+    }
+    &.anchor_bottomCenter{
+        transform: translate(-50%,0) $popupOutroScale translate(0,-100%) ;
+        &:after{
+            border-top:10px solid #FFF;
+            bottom:-20px;
+            left:50%;
+            transform:translate(-50%,0);
+        }
+    }
+    &.showing{
+        pointer-events: auto;
+        opacity:1;
+        &.anchor_bottomCenter{
+            transform: translate(-50%,0) scale(1,1) translate(0,-100%) ;
+        }
+    }
+}

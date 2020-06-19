@@ -1,0 +1,50 @@
+@import '../_vars.scss';
+.popupMenu{
+    >.button{
+        border-radius:50%;
+    }
+    >.whiteBox{
+        position:absolute;
+        top:38px;
+        right:3px;
+        padding:6px 0;
+        width:140px;
+        pointer-events: none;
+        opacity:0;
+        transform-origin: top right;
+        transform:translate(0,-10px) scale(0.75,0.75);
+        transition:all 0.2s ease-out;
+        &:before{
+            border:1px solid #CCC;
+
+        }
+        .tabBar{
+            .tabBarItem{
+                height:36px;
+                padding:0 10px;
+                color:$colorText;
+                border-radius:2px;
+                transition:all 0.15s ease-out;
+                .icon{
+                    width:20px;
+                    height:20px;
+                    margin-right:10px;
+                }
+                &:hover,&:active{
+                    background-color:$colorPurple;
+                    color:#FFF;
+                }
+            }
+        }
+    }
+    &.showing{
+        >.button{
+        }
+        >.whiteBox{
+            opacity:1;
+            transform:translate(0,0px) scale(1,1);
+            pointer-events: auto;
+
+        }
+    }
+}

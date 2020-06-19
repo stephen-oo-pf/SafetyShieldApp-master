@@ -1,0 +1,45 @@
+@import '../../../../vars';
+.eventMarkerInfoBox{
+    .scrollContainer{
+        max-height:400px;
+        .incidentFrame{
+            padding:20px;
+            .incidentFrameOrgHeader{
+                margin-top:-5px;
+                margin-bottom:15px;
+
+                h2{
+                    &.title{
+                        font-size:14px;
+                        font-weight:500;
+                        color:$colorGrey;
+                    }
+                }
+            }
+            .incidentFrameHeader{
+
+            }
+            
+        }
+        .incidentInfo{
+            padding:12px;
+            flex-wrap: nowrap;
+            .incidentInfoItem{
+                margin-bottom:2px;
+                
+                &.actionBy{
+                    width:40%;
+                }
+                &.comments{
+                    flex-grow:1;
+                }
+            }
+        }
+    }
+    .eventMarkerInfoBoxFooter{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

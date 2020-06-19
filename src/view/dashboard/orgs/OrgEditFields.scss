@@ -1,0 +1,80 @@
+@import '../../../vars';
+.orgEditFields{
+    .editFieldsSections{
+        .tabBar{
+            margin:-30px;
+            margin-bottom:30px;
+        }
+        .editFields{
+            display:none;
+            &.showing{
+                display:flex;
+            }
+        }
+    }
+    .smValidatorDesc{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        color:$colorGrey;
+        line-height:normal;
+        .icon{
+            margin-right:10px;
+            flex-shrink: 0;
+        }
+    }
+    .smValidator{
+        display:flex;
+        flex-direction: row;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        margin-bottom:0;
+        .smValidateTitle{
+            margin-bottom:10px;
+            font-weight:500;
+        }
+        .smValidateP1,.smValidateP2,.smValidateState{
+            margin-right:30px;
+            margin-bottom:30px;
+        }
+        .smValidateP1{
+            width:300px;
+        }
+        .smValidateP2{
+        }
+        .button{            
+            margin-bottom:30px;
+        }
+    }
+}
+
+.smValidateState{
+    height:42px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight:500;
+    .icon{
+        margin-right:10px;
+        border-radius:50%;
+        width:30px;
+        height:30px;
+        svg{
+            width:70%;
+            height:70%;
+        }
+    }
+    &.valid{
+        .icon{
+            color:#FFF;
+            background-color:$colorEmerald;
+        }
+    }
+    &.invalid{
+
+        .icon{
+            color:#FFF;
+            background-color:$colorRed;
+        }
+    }
+}

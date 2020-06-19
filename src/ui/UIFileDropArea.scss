@@ -1,0 +1,130 @@
+@import '../_vars.scss';
+
+
+
+.fileDropArea{
+    height:200px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    .selectedFile{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        margin:0;
+        width:0;
+        overflow:hidden;
+        flex-shrink: 0;
+        transition:width 0.4s ease-out, opacity 0.4s;
+        min-width:0;
+        
+        &.hasFile{
+            overflow:visible;
+            width:calc(40% - 40px);
+            margin-right:20px;
+            >.value{
+                opacity:1;
+            }
+        }
+        >.title{
+            white-space: nowrap;
+        }
+        >.value{
+            display:flex;
+            flex-direction: column;
+            border:2px solid rgba(0,0,0,0.1);
+            border-radius:6px;
+            padding:12px;
+            overflow: hidden;
+            opacity:0;
+            transition:opacity 0.4s;
+            .viewFieldsItem{
+                flex-direction: row;
+                font-size:15px;
+                margin:0;
+                margin-bottom:10px;
+                width:auto;
+                align-items: center;
+                height:24px;
+                
+                &:last-child{
+                    margin-bottom:0;
+                }
+                .title{
+                    margin-bottom:0;
+                    margin-right:10px;
+                    width:130px;
+                    flex-shrink: 0;
+                    text-align:right;
+                }
+                .value{
+                    flex-grow:1;
+                    display:flex;
+                    flex-direction: row;
+                    align-items: center;
+                    .fileNameValue{
+
+                    }
+                    img{
+                        width:20px;
+                        margin-left:10px;
+                    }
+                }
+            }
+        }
+    }
+    .dropArea{
+        border:4px dashed rgba(0,0,0,0.3);
+        height:100%;
+        border-radius:12px;
+        background-color:rgba(0,0,0,0.05);
+        flex-grow:1;
+        transition:all 0.3s ease-out;
+        cursor:pointer;
+        position:relative;
+        &:focus{
+            outline:none;
+        }
+        input{
+            outline: none;
+        }
+        .directions{
+            position:absolute;
+            top:50%;
+            left:20px;
+            width:calc(100% - 40px);
+            transform:translate(0,-50%);
+            line-height:normal;
+            text-align:center;
+            pointer-events: none;
+            span{
+                font-weight:700;
+            }
+            margin-bottom:40px;
+            .acceptedTypes{
+                padding-top:15px;
+                white-space: nowrap;
+                .typesTitle{
+                    text-transform: uppercase;
+                    font-size:12px;
+                    opacity:0.5;
+                    padding-bottom:5px;
+                }
+                img{
+                    margin-right:10px;
+                    width:34px;
+                    height:auto;
+                }
+            }
+            
+        }
+        
+        &:hover{
+            border:4px dashed rgba($colorPurple,1);
+        }
+        &.active{
+            border:4px dashed rgba($colorPurple,1);
+        }
+    }
+
+}

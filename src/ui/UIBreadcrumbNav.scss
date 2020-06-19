@@ -1,0 +1,45 @@
+@import '../vars';
+.breadcrumbNav{
+    
+    display:flex;
+    flex-direction: row;
+    align-items: flex-start;
+    
+    a{
+        &:first-child{
+            height:30px;
+        }
+        text-decoration: none;
+        display:inline-flex;
+        align-items: center; 
+        justify-content: center;
+        line-height:30px;     
+        font-size:26px;
+        
+        .icon{
+            font-size:30px;
+            vertical-align: top;
+            flex-shrink: 0;
+            margin-right:14px;
+        }
+        &.soloIcon{
+            .icon{
+                margin-right:0;
+            }
+        }
+    }
+    .spacer{
+        display:inline-flex;
+        color:$colorPurple;
+        align-items: center; 
+        justify-content: center;
+        flex-shrink: 0;
+        height:30px;
+        width:42px;
+        >.icon{
+            font-size:30px;
+            vertical-align: top;
+
+        }
+    }
+}

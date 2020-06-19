@@ -1,0 +1,41 @@
+@import '../vars';
+.incidentTypeIcon{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    
+    >.icon{
+        background-color:$colorPurple;
+        border-radius:50%;
+        width:80px;
+        height:80px;
+        flex-shrink: 0;
+        color:#FFF;
+        svg{
+            width:60%;
+            height:60%;
+        }
+    }
+    .label{
+        flex-grow:1;
+        margin-left:10px;
+    }
+    .badge{
+        margin-left:10px;
+    }
+    &.clickable{
+        cursor: pointer;
+    }
+    &.smallerAndBlack{
+        
+        >.icon{
+            background-color:$colorBlack;
+            width:54px;
+            height:54px;
+        }
+        .label{
+            font-size:20px;
+            font-weight:500;
+        }
+    }
+}

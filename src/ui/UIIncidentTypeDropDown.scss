@@ -1,0 +1,41 @@
+@import '../vars';
+.incidentTypeDropDown{
+    .ddBtn{
+        height:42px;
+        .label{
+            .incidentTypeIcon{
+                .icon{
+                    width:36px;
+                    height:36px;
+                }
+            }
+            .chooseIncidentType{
+                padding:0 6px;
+            }
+        }
+    }
+    .container{
+        .containerInside{
+            background-color:#FFF;
+            border:1px solid rgba(0,0,0,0.1);
+            border-radius:6px;
+            .incidentTypeDropDownItem{
+                padding:10px;
+                border-bottom:1px solid rgba(0,0,0,0.1);
+                cursor: pointer;
+                .incidentTypeIcon{
+                    .icon{
+                        width:36px;
+                        height:36px;
+                    }
+                }
+            }
+        }
+    }
+    &.open{
+        .container{
+
+        }
+    }
+
+}

@@ -1,0 +1,232 @@
+@import '../_vars.scss';
+
+.fieldArea{
+    margin-bottom:-30px;
+    margin-right:-30px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    
+    .divider{
+        margin-bottom:30px;
+        margin-right:30px;
+        height:2px;
+        width:100%;
+        background-color:rgba(0,0,0,0.1);
+    }
+    .fieldItem{
+        width:calc(25% - 30px);
+        &.fullWidth{
+            width:calc(100% - 30px);
+        }
+        &.halfWidth{
+            width:calc(50% - 30px);            
+        }
+
+        
+    }
+    
+    .statusBanner{
+        width:100%;
+        margin-right:30px;
+    }
+    //if we ever have more than 30 items in 1 area field we need to up this number
+    @for $i from 1 through 30{
+        .fieldItem:nth-child(#{$i}n){
+            z-index: 100 - $i;
+            animation-delay:#{$i * 0.075}s;
+            &.focused{
+                z-index:110;
+            }
+        }
+    }    
+}
+
+@keyframes fieldItemIntro{
+    0%{
+        opacity:0;
+        transform:translate(0,16px);
+    }
+    99%{
+        opacity:1;
+        transform:translate(0,0);
+    }
+    100%{
+        opacity:1;
+        transform:none;
+    }
+}
+@keyframes fieldItemIntroNoTransform{
+    0%{
+        opacity:0;
+        top:16px;
+    }
+    100%{
+        top:0px;
+        opacity:1;
+    }
+}
+.fieldItem{
+    margin-bottom:30px;
+    margin-right:30px;
+    display:flex;
+    flex-direction: column;
+    position:relative;
+    opacity:0;
+    animation-name: fieldItemIntro;
+    animation-timing-function: ease-out;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    .title{
+        font-weight:500;
+        margin-bottom:10px;
+        height:16px;
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        .required{
+            margin-left:5px;
+            color:$colorRed;
+        }
+    }
+    .value{
+        line-height:normal;
+        
+        .incidentTypeIcon{
+            .icon{
+                width:40px;
+                height:40px;
+            }
+        }
+    }
+    
+    &.steps{
+        animation-name: fieldItemIntroNoTransform;
+
+    }
+    &.incidentTypeId{
+        z-index:10;
+    }
+    &.mobilePhone{
+        .value{
+            display:flex;
+            flex-direction: row;
+            align-items: flex-start;
+            .button{
+                margin-left:10px;
+                margin-top:-6px;
+            }
+        }
+
+    }
+    &.fileSize{
+        .value{
+           display:flex;
+           flex-direction: row;
+           align-items: flex-start;
+           img{
+               margin-top:-22px;
+               margin-left:auto;
+               width:34px;
+           } 
+        }
+    }
+    &.searchemail{
+        .icon{
+            position:absolute;
+            bottom:0;
+            right:0;
+            height:42px;
+            width:42px;
+            cursor: pointer;
+            color:$colorPurple;
+            svg{
+                width:60%;
+                height:60%;
+            }
+            &:hover,&:active{
+                color:$colorPurple2;
+            }
+        }
+    }
+    &.orgs{
+        >.value{
+            .fieldItemOrg{
+                padding:10px 20px;
+                border-radius:6px;
+                margin-bottom:15px;
+
+                transition:all 0.3s;
+                .icon{
+                    margin-left:auto;
+                    color: $colorPurple;
+                }
+                .fieldItemOrgParent{
+                    display:flex;
+                    flex-direction: row;
+                    align-items: center;
+                    padding:10px 0;
+                    padding-right:20px;
+                    transition:all 0.3s;
+                }
+                &.child{
+                    background-color:rgba(0,0,0,0.1);    
+                    margin-right:0;
+                    margin-bottom:5px;
+                    &:first-child{
+                        margin-top:10px;
+                    }     
+                    display:flex;
+                    flex-direction: row;
+                    align-items: center;
+                    
+                    &.canClick{
+                        cursor: pointer;
+                        &:hover,&:active{
+                            color: $colorPurple2;
+                        }
+                    }
+                }
+                &.parent{
+                    font-weight:500; 
+                    &.canClick{
+                        .fieldItemOrgParent{
+                            cursor: pointer;
+                            &:hover,&:active{
+                                color: $colorPurple2;
+                            }
+                        }
+                    }
+                }
+                &:last-child{
+                    margin-bottom:10px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:$resize1){
+    .fieldArea{
+        .fieldItem{
+            width:calc(33.33% - 30px);
+        }
+    }
+}
+@media(max-width:$resize2){
+    .fieldArea{
+        .fieldItem{
+            width:calc(50% - 30px);
+        }
+    }
+}
+@media(max-width:$mobile1){
+    
+    .fieldArea{
+        .fieldItem{
+            width:calc(100% - 30px);
+        }
+    }
+}

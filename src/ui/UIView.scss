@@ -1,0 +1,33 @@
+@import '../_vars.scss';
+.view{
+    height:100%;
+    position:relative;
+    overflow:hidden;
+
+    &.padding{
+        padding:42px;
+    }
+    &.scrollContainer{
+        &.padding{//firefox doesn't read padding bottom when overflow is scrolling... so we add an after instead
+            padding-bottom:0;
+            &:after{
+                content:"";
+                display:block;
+                height:42px;
+            }
+        }
+    }
+    @media(max-width:$resize2){
+        &.padding{
+            padding:30px;
+        }
+        &.scrollContainer{
+            &.padding{
+                padding-bottom:0;
+                &:after{
+                    height:30px;
+                }
+            }
+        }
+    }
+}

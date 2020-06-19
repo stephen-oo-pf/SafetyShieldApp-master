@@ -1,0 +1,144 @@
+@import '../_vars.scss';
+$toggleW:90px;
+$toggleH:40px;
+$togglePadOverlay:12px;
+$toggleBorderRad:6px;
+
+$toggleSmallW:72px;
+$toggleSmallH:32px;
+$toggleSmallPadOverlay:10px;
+$toggleSmallBorderRad:6px;
+
+.toggle{
+  width:$toggleW;
+  height:$toggleH;
+  border-radius:$toggleBorderRad;
+  overflow:hidden;
+  user-select:none;
+  display:inline-block;
+  vertical-align: top;
+  cursor:pointer;
+  outline: none;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  &.off{
+    .toggleInside{
+      transform:translate(-($toggleW - $toggleH),0);
+    }
+  }
+  &:active,&:hover{
+    .toggleInside{
+      .toggleOn{
+        background-color:$colorPurple;
+      }
+    }
+  }
+  &.inactive{
+    pointer-events: none;
+    
+    .toggleInside{
+      opacity:0.1;
+    }
+    .inactiveMessage{
+
+    }
+  }
+  .toggleInactive{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:100%;
+    text-align:center;
+    font-size:12px;
+    transform:translate(-50%,-50%);
+  }
+  .toggleInside{
+    width:$toggleW - $toggleH + $toggleW;
+    height:$toggleH;
+    position:relative;
+    //background-color:rgba(0,0,0,0.4);
+    transition:transform 0.5s ease;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    >div{
+      display:inline-block;
+      height:$toggleH;
+      line-height:$toggleH;
+      vertical-align: top;
+      text-align:center;
+      position:relative;
+      font-weight:600;
+      color:#FFFFFF;
+    }
+    .toggleOn{
+      width:$toggleW - ($toggleH - $togglePadOverlay);
+      background-color:$colorPurple;
+      padding-right:$togglePadOverlay;
+      transition:background-color 0.3s;
+    }
+    .toggleOff{
+      width:$toggleW - ($toggleH - $togglePadOverlay);
+      background-color:rgba(0,0,0,.15);
+      padding-left:$togglePadOverlay;
+      color:$colorText;
+    }
+    .toggleDrag{
+      width:$toggleH;
+      background-color:#ffffff;
+      border-radius:$toggleBorderRad;
+      position:relative;
+      z-index:5;
+      margin-left:-$togglePadOverlay;
+      margin-right:-$togglePadOverlay;
+      box-sizing: border-box;
+      color:rgba(0,0,0,0.5);
+      display:inline-flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      border:1px solid rgba(0,0,0,0.5);
+
+    }
+  }
+
+
+
+  &.small{
+    width:$toggleSmallW;
+    height:$toggleSmallH;
+    border-radius:$toggleSmallBorderRad;
+    .toggleInside{
+      width:$toggleSmallW - $toggleSmallH + $toggleSmallW;  
+      height:$toggleSmallH;
+      >div{
+        height:$toggleSmallH;
+        line-height:$toggleSmallH;
+        font-size:14px;
+      }
+      .toggleOn{
+        width:$toggleSmallW - ($toggleSmallH - $toggleSmallPadOverlay);
+        padding-right:$toggleSmallPadOverlay;
+      }
+      .toggleOff{
+        width:$toggleSmallW - ($toggleSmallH - $toggleSmallPadOverlay);
+        padding-left:$toggleSmallPadOverlay;
+      }
+      .toggleDrag{
+        border-radius:$toggleSmallBorderRad;
+        margin-left:-$toggleSmallPadOverlay;
+        margin-right:-$toggleSmallPadOverlay;
+        width:$toggleSmallH;
+      }
+    }
+    &.off{
+      .toggleInside{
+        transform:translate(-($toggleSmallW - $toggleSmallH),0);
+      }      
+    }
+  }
+}
+

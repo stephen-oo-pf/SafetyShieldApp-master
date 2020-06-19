@@ -1,0 +1,74 @@
+@import '../_vars.scss';
+.filterInput{
+    position:relative;
+    height:42px;
+    &:after{
+        content:"";
+        position:absolute;
+        bottom:0;
+        left:0;
+        width:100%;
+        height:1px;
+        background-color:rgba(0,0,0,0.1);
+        transition:all 0.2s;
+    }
+    .inputElement{
+        font-size:14px;
+        padding:10px;
+        width:360px;
+        font-weight:600;
+        padding-left:50px;  
+        background-color:transparent;
+        border-radius: 0;
+        border:0;
+        letter-spacing: 0.5px;
+        height:42px;
+
+        &::placeholder{
+            text-transform: uppercase;
+        }
+        &:focus{
+            border:0;        
+        }
+
+    }
+    .clear{
+        pointer-events: none;
+        transition:opacity 0.2s;
+        color:rgba($colorText,0.5);
+        &.searching{
+            color:$colorPurple;
+            pointer-events: auto;
+        }
+        &:hover{
+            color:$colorPurple2;
+        }
+    }
+    .icon{
+        position:absolute;
+        top:50%;
+        left:0;
+        transform:translate(0,-50%);
+        width:43px;
+        height:43px;
+        text-align:center;
+        cursor:pointer;
+        svg{
+            width:60%;
+            height:60%;
+        }
+    }
+    
+    &.hasValue{
+        .inputElement{
+            border-bottom-color: $colorPurple;
+        }
+    }
+    &.focused{
+        &:after{
+            height:2px;
+            background-color:$colorPurple;
+        }
+
+    }
+}

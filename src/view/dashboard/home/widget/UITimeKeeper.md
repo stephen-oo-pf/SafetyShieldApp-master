@@ -1,5 +1,5 @@
 ---
-### USM: To log shedule time (hour|minute|meridiem) for part-of Drill Component
+### USM: To log schedule time (hour|minute|meridiem) for part-of Drill Component
 1. Click on the 'Show' button to open the Alarm Clock Plus dialog: UITimekeeper.tsx
 2. Click on Top Bar:
      - Hour text handle to display and select input to log
@@ -11,7 +11,7 @@
      - Minute circle handle to select and transform value to log.
      - Meridiem handle to check and transform value to log.
  
-4. Check the log value on the input display read from Top Bar | Clock Face handlers:
+4. Check the log value on the form input display read from Top Bar | Clock Face handlers:
      - Hour field value: "12" (default)
      - Minute field value: "00" (default) 
      - Meridiem field value: "PM" (default) 

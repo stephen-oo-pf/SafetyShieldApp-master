@@ -21,6 +21,10 @@ import NotifWidget from './widget/NotifWidget';
 import OrgSelectorWidget from './widget/OrgSelectorWidget';
 import DrillWidget from './widget/DrillWidget';
 
+
+// import UITimeKeeper from './widget/TimeKeeperFC';
+import UITimeKeeper from './widget/UITimeKeeper';
+
 export interface IHomeViewProps extends RouteComponentProps {
 
 }
@@ -96,11 +100,14 @@ export default class HomeView extends React.Component<IHomeViewProps, IHomeViewS
         }
 
         
-
-
-
+        let jsxTimeKeeper: JSX.Element = (
+            <UITimeKeeper />
+        )
+    
+    
         return (
             <UIView id={HomeView.ID} usePadding useScrollContainer>
+                                   
                 <UIAlertsBanner/>
                 <div className="homeContent">
                     <div className="row rowA">
@@ -109,24 +116,24 @@ export default class HomeView extends React.Component<IHomeViewProps, IHomeViewS
                                 <OrgStatsWidget/>
                             )}
                             <EventsMapWidget/>
-
                         </div>
                         <div className="column columnA">
                             {showEventList && (
                                 <EventsListWidget/>
                             )}
-
                         </div>
                     </div>
                     <div className="row rowB">
                         <div className="column columnA">
                             {showOrgSelector && (
                                 <OrgSelectorWidget/>
-                            )}
+                            )}                                              
                             {showDrills && (
-                                <DrillWidget/>
+                                <DrillWidget/>                             
                             )}
+                            {jsxTimeKeeper}
                         </div>
+
                         <div className="column columnB">
                             {showEC && (
                                 <ECWidget/>

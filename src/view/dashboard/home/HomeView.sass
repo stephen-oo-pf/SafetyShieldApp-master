@@ -1,0 +1,51 @@
+@import ../../../vars
+
+.home
+  .homeContent
+    position: relative
+    margin-right: auto
+    margin-left: auto
+    max-width: $maxContentW
+
+  .eventsMapWidget
+    height: 370px
+
+  .eventsListWidget
+    height: 370px
+
+  $rowSpacing: 30px
+  $colSpacing: 30px
+
+  .row
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    align-items: flex-start
+    margin-right: -$colSpacing
+
+    .column
+      display: flex
+      flex-direction: column
+      flex-grow: 1
+      position: relative
+
+      .widget
+        margin-right: $colSpacing
+        margin-bottom: $rowSpacing
+
+      &.columnA
+        width: 40%
+
+      &.columnB
+        width: 60%
+
+    &:last-child
+      margin-bottom: -$rowSpacing
+
+  @media (max-width: $resize2)
+    .row
+      .column
+        &.columnA
+          min-width: 300px
+
+        &.columnB

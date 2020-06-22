@@ -1,0 +1,59 @@
+.timekeeper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid none;
+}
+
+.timekeeper .react-timekeeper__clock-hand-immediate-circle {
+  border: 1px solid red;
+}
+
+.timekeeper .react-timekeeper__clock-hand-circle-center {
+  border: 1px solid red;
+}
+
+.timekeeper .react-timekeeper__clock-hand-circle-outer {
+  border: 1px solid red;
+}
+
+.timekeeper .react-timekeeper__done-button {
+  border: 1px solid red;
+}
+
+.timekeeper .react-timekeeper__clock-hour {
+  border: 1px solid red;
+}
+
+.timekeeper .react-timekeeper__clock-minutes {
+  border: 1px solid red;
+}
+
+.timekeeper .react-timekeeper__drop-down-numbers {
+  border: 1px solid red;
+}
+
+.alarm-clock-plus {
+  display: flex;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 6px;
+  background-image: linear-gradient(#ff70b1, #d42a78);
+}
+
+.current-time {
+  display: flex;
+  background-color: #582D82;
+  padding: 10px;
+  color: white;
+  text-align: center;
+}
+
+.current-time-form {
+  width: 180px;
+  background-color: #582D82;
+  text-align: center;
+  line-height: 2;
+}
+
+/*# sourceMappingURL=UITimekeeper.scss.map */

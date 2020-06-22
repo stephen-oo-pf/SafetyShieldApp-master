@@ -37,6 +37,7 @@
     "react-date-picker": "^8.0.1",
     "react-dom": "^16.12.0",
     "react-dropzone": "^10.2.1",
+    "react-gradient-timepicker": "0.0.3",
     "react-grid-layout": "^0.17.1",
     "react-pdf": "^4.1.0",
     "react-rangeslider": "^2.2.0",
@@ -44,6 +45,7 @@
     "react-scripts": "3.3.0",
     "react-sizeme": "^2.6.12",
     "react-time-picker": "^4.0.1",
+    "react-timekeeper": "^1.1.0",
     "react-virtualized": "^9.21.2",
     "recharts": "^1.8.5",
     "typescript": "^3.7.5"

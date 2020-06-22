@@ -1,5 +1,5 @@
 ---
-### USM: To log schedule time (hour|minute|meridiem) for part-of Drill Component
+### USM: To log schedule time (hour | minute | meridiem) for part-of Drill Component
 1. Click on the 'Show' button to open the Alarm Clock Plus dialog: UITimekeeper.tsx
 2. Click on Top Bar:
      - Hour text handle to display and select input to log

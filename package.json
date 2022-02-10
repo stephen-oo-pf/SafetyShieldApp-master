@@ -30,7 +30,7 @@
     "@types/react-virtualized": "^9.21.7",
     "@types/recharts": "^1.8.10",
     "jshashes": "^1.0.7",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "preval.macro": "^4.0.0",
     "react": "^16.12.0",
     "react-beautiful-dnd": "^13.0.0",
